@@ -32,7 +32,8 @@ export default function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        style={{ top: "var(--strip-offset, 0px)", transition: "top 0.3s ease-out" }}
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? "bg-white/95 backdrop-blur-md shadow-sm py-3"
             : "bg-transparent py-6"

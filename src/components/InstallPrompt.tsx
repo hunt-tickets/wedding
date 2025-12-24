@@ -20,15 +20,18 @@ export default function InstallPrompt() {
   const [isInstalled, setIsInstalled] = useState(false);
   const [canInstall, setCanInstall] = useState(false);
 
-  // Add padding to body when strip is visible
+  // Add padding to body and offset for fixed elements when strip is visible
   useEffect(() => {
     if (showStrip && !showPrompt && !showIOSInstructions) {
       document.body.style.paddingTop = `${STRIP_HEIGHT}px`;
+      document.documentElement.style.setProperty("--strip-offset", `${STRIP_HEIGHT}px`);
     } else {
       document.body.style.paddingTop = "0px";
+      document.documentElement.style.setProperty("--strip-offset", "0px");
     }
     return () => {
       document.body.style.paddingTop = "0px";
+      document.documentElement.style.setProperty("--strip-offset", "0px");
     };
   }, [showStrip, showPrompt, showIOSInstructions]);
 
