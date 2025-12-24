@@ -48,30 +48,30 @@ export default function RSVP() {
   };
 
   return (
-    <section id="rsvp" className="py-24 md:py-32 bg-navy text-white relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-5">
+    <section id="rsvp" className="py-16 sm:py-24 md:py-32 bg-navy text-white relative overflow-hidden">
+      {/* Decorative elements - hidden on mobile */}
+      <div className="absolute inset-0 opacity-5 hidden sm:block">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,white_0%,transparent_40%)]" />
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,white_0%,transparent_40%)]" />
       </div>
 
-      <div className="max-w-2xl mx-auto px-6 relative z-10">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <Mail className="w-8 h-8 text-gold mx-auto mb-6" />
-          <h2 className="font-serif text-4xl md:text-6xl mb-6">
+          <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-gold mx-auto mb-4 sm:mb-6" />
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl mb-4 sm:mb-6">
             Confirma tu Asistencia
           </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+          <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto">
             Por favor, confirma antes del 1 de Julio de 2026
           </p>
-          <div className="w-24 h-px bg-gold mx-auto mt-8" />
+          <div className="w-16 sm:w-24 h-px bg-gold mx-auto mt-6 sm:mt-8" />
         </motion.div>
 
         {/* Form or Success Message */}
@@ -79,13 +79,13 @@ export default function RSVP() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/20"
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-10 text-center border border-white/20"
           >
-            <div className="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="w-10 h-10 text-white" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <Check className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
             </div>
-            <h3 className="font-serif text-3xl mb-4">¡Gracias por confirmar!</h3>
-            <p className="text-white/70">
+            <h3 className="font-serif text-2xl sm:text-3xl mb-3 sm:mb-4">¡Gracias por confirmar!</h3>
+            <p className="text-white/70 text-sm sm:text-base">
               Hemos recibido tu respuesta. ¡Nos vemos el 01 de Agosto de 2026!
             </p>
           </motion.div>
@@ -95,7 +95,7 @@ export default function RSVP() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             onSubmit={handleSubmit(onSubmit)}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/20"
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 sm:p-8 md:p-10 border border-white/20"
           >
             {/* Name */}
             <div className="mb-6">
@@ -130,11 +130,11 @@ export default function RSVP() {
             </div>
 
             {/* Attendance */}
-            <div className="mb-6">
-              <label className="block text-sm font-medium mb-3">
+            <div className="mb-5 sm:mb-6">
+              <label className="block text-sm font-medium mb-2 sm:mb-3">
                 ¿Asistirás a la boda? *
               </label>
-              <div className="flex gap-4">
+              <div className="flex gap-2 sm:gap-4">
                 <label className="flex-1">
                   <input
                     type="radio"
@@ -142,7 +142,7 @@ export default function RSVP() {
                     value="yes"
                     className="sr-only peer"
                   />
-                  <div className="py-3 px-4 border border-white/20 rounded-lg text-center cursor-pointer peer-checked:bg-gold peer-checked:border-gold transition-all hover:border-white/40">
+                  <div className="py-2.5 sm:py-3 px-3 sm:px-4 border border-white/20 rounded-lg text-center cursor-pointer peer-checked:bg-gold peer-checked:border-gold transition-all hover:border-white/40 text-sm sm:text-base">
                     ¡Sí, asistiré!
                   </div>
                 </label>
@@ -153,7 +153,7 @@ export default function RSVP() {
                     value="no"
                     className="sr-only peer"
                   />
-                  <div className="py-3 px-4 border border-white/20 rounded-lg text-center cursor-pointer peer-checked:bg-white/20 peer-checked:border-white/40 transition-all hover:border-white/40">
+                  <div className="py-2.5 sm:py-3 px-3 sm:px-4 border border-white/20 rounded-lg text-center cursor-pointer peer-checked:bg-white/20 peer-checked:border-white/40 transition-all hover:border-white/40 text-sm sm:text-base">
                     No podré asistir
                   </div>
                 </label>

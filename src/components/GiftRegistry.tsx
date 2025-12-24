@@ -54,14 +54,14 @@ function GiftCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.15 }}
-      className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group text-center"
+      className="bg-white rounded-2xl p-5 sm:p-8 shadow-lg hover:shadow-xl transition-all group text-center"
     >
-      <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/20 transition-colors">
-        <Icon className="w-8 h-8 text-navy group-hover:text-gold transition-colors" />
+      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-gold/20 transition-colors">
+        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-navy group-hover:text-gold transition-colors" />
       </div>
 
-      <h3 className="font-serif text-2xl text-navy mb-4">{option.title}</h3>
-      <p className="text-navy/60 mb-6">{option.description}</p>
+      <h3 className="font-serif text-xl sm:text-2xl text-navy mb-3 sm:mb-4">{option.title}</h3>
+      <p className="text-navy/60 text-sm sm:text-base mb-4 sm:mb-6">{option.description}</p>
 
       {option.bankInfo && (
         <div className="bg-cream rounded-xl p-4 mb-6 text-left">
@@ -93,29 +93,29 @@ export default function GiftRegistry() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="regalos" className="py-24 md:py-32 bg-cream">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="regalos" className="py-16 sm:py-24 md:py-32 bg-cream">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-20"
         >
-          <Gift className="w-8 h-8 text-gold mx-auto mb-6" />
-          <h2 className="font-serif text-4xl md:text-6xl text-navy mb-6">
+          <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-gold mx-auto mb-4 sm:mb-6" />
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-navy mb-4 sm:mb-6">
             Mesa de Regalos
           </h2>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+          <p className="text-navy/60 text-base sm:text-lg max-w-2xl mx-auto">
             Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo,
             aquí tienes algunas opciones
           </p>
-          <div className="w-24 h-px bg-gold mx-auto mt-8" />
+          <div className="w-16 sm:w-24 h-px bg-gold mx-auto mt-6 sm:mt-8" />
         </motion.div>
 
         {/* Gift Options */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
           {giftOptions.map((option, index) => (
             <GiftCard key={option.title} option={option} index={index} />
           ))}

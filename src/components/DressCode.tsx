@@ -11,8 +11,8 @@ export default function DressCode() {
 
   return (
     <section className="py-24 md:py-32 bg-navy text-white relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Decorative elements - hidden on mobile */}
+      <div className="absolute inset-0 opacity-10 hidden md:block">
         <div className="absolute top-10 left-10 w-64 h-64 border border-white rounded-full" />
         <div className="absolute bottom-10 right-10 w-96 h-96 border border-white rounded-full" />
       </div>
@@ -34,22 +34,22 @@ export default function DressCode() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20"
+            className="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 border border-white/20"
           >
-            <Sparkles className="w-12 h-12 text-gold mx-auto mb-6" />
-            <h3 className="font-serif text-4xl md:text-5xl mb-4">Formal</h3>
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8">
+            <Sparkles className="w-10 h-10 sm:w-12 sm:h-12 text-gold mx-auto mb-4 sm:mb-6" />
+            <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4">Formal</h3>
+            <p className="text-white/80 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-8">
               Te invitamos a vestir de manera elegante para esta celebración
               especial. Traje formal para caballeros y vestido largo o cocktail
               para damas.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-8 mt-10">
+            <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-10">
               {/* Men */}
               <div className="text-center">
-                <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <svg
-                    className="w-10 h-10 text-gold"
+                    className="w-8 h-8 sm:w-10 sm:h-10 text-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -62,8 +62,8 @@ export default function DressCode() {
                     />
                   </svg>
                 </div>
-                <h4 className="font-serif text-2xl mb-2">Caballeros</h4>
-                <p className="text-white/70">
+                <h4 className="font-serif text-xl sm:text-2xl mb-1 sm:mb-2">Caballeros</h4>
+                <p className="text-white/70 text-sm sm:text-base">
                   Traje formal oscuro
                   <br />
                   Corbata o pajarita
@@ -72,9 +72,9 @@ export default function DressCode() {
 
               {/* Women */}
               <div className="text-center">
-                <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <svg
-                    className="w-10 h-10 text-gold"
+                    className="w-8 h-8 sm:w-10 sm:h-10 text-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -87,8 +87,8 @@ export default function DressCode() {
                     />
                   </svg>
                 </div>
-                <h4 className="font-serif text-2xl mb-2">Damas</h4>
-                <p className="text-white/70">
+                <h4 className="font-serif text-xl sm:text-2xl mb-1 sm:mb-2">Damas</h4>
+                <p className="text-white/70 text-sm sm:text-base">
                   Vestido largo o cocktail
                   <br />
                   Tacones elegantes
@@ -96,7 +96,7 @@ export default function DressCode() {
               </div>
             </div>
 
-            <p className="text-gold mt-10 text-sm tracking-wide">
+            <p className="text-gold mt-8 sm:mt-10 text-xs sm:text-sm tracking-wide">
               * Por favor evitar el color blanco, reservado para la novia
             </p>
           </motion.div>

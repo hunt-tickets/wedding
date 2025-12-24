@@ -10,24 +10,24 @@ export default function Location() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="ubicacion" className="py-24 md:py-32 bg-cream">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="ubicacion" className="py-16 sm:py-24 md:py-32 bg-cream">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-20"
         >
-          <MapPin className="w-8 h-8 text-gold mx-auto mb-6" />
-          <h2 className="font-serif text-4xl md:text-6xl text-navy mb-6">
+          <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-gold mx-auto mb-4 sm:mb-6" />
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-navy mb-4 sm:mb-6">
             Ubicación
           </h2>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+          <p className="text-navy/60 text-base sm:text-lg max-w-2xl mx-auto">
             Celebraremos nuestro amor en el mágico escenario de Santa Marta
           </p>
-          <div className="w-24 h-px bg-gold mx-auto mt-8" />
+          <div className="w-16 sm:w-24 h-px bg-gold mx-auto mt-6 sm:mt-8" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -89,7 +89,7 @@ export default function Location() {
               href="https://maps.google.com/?q=Santa+Marta,+Colombia"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-navy text-white px-8 py-4 rounded-full hover:bg-navy-light transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-navy-light transition-colors w-full sm:w-auto"
             >
               <NavIcon className="w-5 h-5" />
               Cómo llegar
@@ -101,22 +101,22 @@ export default function Location() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            className="relative mt-8 md:mt-0"
           >
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125036.54556506!2d-74.2598!3d11.2404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4b8a5e5c5a9a7%3A0x8c2b0e6c3e6a8c5a!2sSanta%20Marta%2C%20Magdalena!5e0!3m2!1sen!2sco!4v1609459200000!5m2!1sen!2sco"
                 width="100%"
-                height="400"
+                height="300"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale hover:grayscale-0 transition-all duration-500"
+                className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"
               />
             </div>
-            {/* Decorative frame */}
-            <div className="absolute -top-4 -right-4 w-full h-full border-2 border-gold rounded-2xl -z-10" />
+            {/* Decorative frame - hidden on mobile */}
+            <div className="hidden md:block absolute -top-4 -right-4 w-full h-full border-2 border-gold rounded-2xl -z-10" />
           </motion.div>
         </div>
       </div>

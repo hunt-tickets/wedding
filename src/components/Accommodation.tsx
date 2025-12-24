@@ -56,7 +56,7 @@ function HotelCard({
       transition={{ duration: 0.6, delay: index * 0.15 }}
       className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
     >
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-44 sm:h-56 overflow-hidden">
         <img
           src={hotel.image}
           alt={hotel.name}
@@ -71,25 +71,25 @@ function HotelCard({
         </div>
       </div>
 
-      <div className="p-6">
-        <h3 className="font-serif text-2xl text-navy mb-2">{hotel.name}</h3>
-        <p className="text-navy/60 mb-4">{hotel.description}</p>
+      <div className="p-4 sm:p-6">
+        <h3 className="font-serif text-xl sm:text-2xl text-navy mb-2">{hotel.name}</h3>
+        <p className="text-navy/60 text-sm sm:text-base mb-3 sm:mb-4">{hotel.description}</p>
 
-        <div className="flex items-center gap-2 text-sm text-navy/50 mb-4">
-          <MapPin className="w-4 h-4" />
+        <div className="flex items-center gap-2 text-xs sm:text-sm text-navy/50 mb-3 sm:mb-4">
+          <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
           {hotel.distance}
         </div>
 
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-          <span className="text-gold font-medium">{hotel.price}</span>
+        <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100">
+          <span className="text-gold font-medium text-sm sm:text-base">{hotel.price}</span>
           <a
             href={hotel.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-navy hover:text-gold transition-colors"
+            className="inline-flex items-center gap-1 sm:gap-2 text-navy hover:text-gold transition-colors text-sm"
           >
             Ver más
-            <ExternalLink className="w-4 h-4" />
+            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
           </a>
         </div>
       </div>
@@ -102,29 +102,29 @@ export default function Accommodation() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="alojamiento" className="py-24 md:py-32 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="alojamiento" className="py-16 sm:py-24 md:py-32 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-20"
         >
-          <Hotel className="w-8 h-8 text-gold mx-auto mb-6" />
-          <h2 className="font-serif text-4xl md:text-6xl text-navy mb-6">
+          <Hotel className="w-6 h-6 sm:w-8 sm:h-8 text-gold mx-auto mb-4 sm:mb-6" />
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-navy mb-4 sm:mb-6">
             Alojamiento
           </h2>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+          <p className="text-navy/60 text-base sm:text-lg max-w-2xl mx-auto">
             Hemos seleccionado algunas opciones de hospedaje para que disfrutes de
             Santa Marta
           </p>
-          <div className="w-24 h-px bg-gold mx-auto mt-8" />
+          <div className="w-16 sm:w-24 h-px bg-gold mx-auto mt-6 sm:mt-8" />
         </motion.div>
 
         {/* Hotels Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {hotels.map((hotel, index) => (
             <HotelCard key={hotel.name} hotel={hotel} index={index} />
           ))}

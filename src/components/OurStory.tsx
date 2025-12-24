@@ -75,31 +75,31 @@ export default function OurStory() {
   };
 
   return (
-    <section id="historia" className="py-24 md:py-32 bg-cream overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="historia" className="py-16 sm:py-24 md:py-32 bg-cream overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 30 }}
           animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <Heart className="w-8 h-8 text-gold mx-auto mb-6" />
-          <h2 className="font-serif text-4xl md:text-6xl text-navy mb-6">
+          <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-gold mx-auto mb-4 sm:mb-6" />
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-navy mb-4 sm:mb-6">
             Nuestra Historia
           </h2>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+          <p className="text-navy/60 text-base sm:text-lg max-w-2xl mx-auto px-2">
             Un viaje de amor que comenzó hace años y que ahora nos lleva al día más
             especial de nuestras vidas
           </p>
-          <div className="w-24 h-px bg-gold mx-auto mt-8" />
+          <div className="w-16 sm:w-24 h-px bg-gold mx-auto mt-6 sm:mt-8" />
         </motion.div>
 
         {/* Carousel Container */}
         <div className="relative">
           {/* Main Carousel */}
-          <div className="relative h-[500px] md:h-[550px] overflow-hidden rounded-3xl">
+          <div className="relative h-[400px] sm:h-[500px] md:h-[550px] overflow-hidden rounded-2xl sm:rounded-3xl">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={page}
@@ -139,19 +139,19 @@ export default function OurStory() {
                   <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
 
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
+                  <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-12 text-white">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2, duration: 0.5 }}
                     >
-                      <span className="inline-block bg-gold text-white text-sm font-medium px-4 py-1 rounded-full mb-4">
+                      <span className="inline-block bg-gold text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1 rounded-full mb-3 sm:mb-4">
                         {storyEvents[currentIndex].year}
                       </span>
-                      <h3 className="font-serif text-3xl md:text-5xl mb-4">
+                      <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl mb-2 sm:mb-4">
                         {storyEvents[currentIndex].title}
                       </h3>
-                      <p className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed">
+                      <p className="text-white/80 text-sm sm:text-lg md:text-xl max-w-2xl leading-relaxed">
                         {storyEvents[currentIndex].description}
                       </p>
                     </motion.div>
@@ -176,15 +176,15 @@ export default function OurStory() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-8">
+          <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
             {storyEvents.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentIndex
-                    ? "w-8 h-3 bg-gold"
-                    : "w-3 h-3 bg-navy/30 hover:bg-navy/50"
+                    ? "w-6 sm:w-8 h-2 sm:h-3 bg-gold"
+                    : "w-2 sm:w-3 h-2 sm:h-3 bg-navy/30 hover:bg-navy/50"
                 }`}
               />
             ))}

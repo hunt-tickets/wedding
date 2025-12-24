@@ -10,16 +10,16 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background with overlay */}
+      {/* Background with overlay - bg-scroll on mobile for iOS compatibility */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.4), rgba(30, 58, 95, 0.6)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80')`,
         }}
       />
 
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Decorative elements - hidden on mobile for cleaner look */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
@@ -35,12 +35,12 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-4xl mx-auto pt-16 md:pt-0">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg md:text-xl tracking-[0.3em] uppercase mb-6 font-light"
+          className="text-sm sm:text-lg md:text-xl tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6 font-light"
         >
           Estás invitado a la boda de
         </motion.p>
@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-4 leading-tight"
+          className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light mb-2 sm:mb-4 leading-tight"
         >
           Pablo José
         </motion.h1>
@@ -58,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-gold text-4xl md:text-5xl font-serif my-4"
+          className="text-gold text-3xl sm:text-4xl md:text-5xl font-serif my-2 sm:my-4"
         >
           &
         </motion.div>
@@ -67,7 +67,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-8 leading-tight"
+          className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light mb-6 sm:mb-8 leading-tight"
         >
           María José
         </motion.h1>
@@ -83,7 +83,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="text-xl md:text-2xl tracking-wide font-light mb-2"
+          className="text-lg sm:text-xl md:text-2xl tracking-wide font-light mb-1 sm:mb-2"
         >
           01 de Agosto de 2026
         </motion.p>
@@ -92,7 +92,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.4 }}
-          className="text-lg md:text-xl tracking-wide font-light text-white/80"
+          className="text-base sm:text-lg md:text-xl tracking-wide font-light text-white/80"
         >
           Santa Marta, Colombia
         </motion.p>
