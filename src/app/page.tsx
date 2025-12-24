@@ -11,10 +11,8 @@ import FAQ from "@/components/FAQ";
 import RSVP from "@/components/RSVP";
 import Playlist from "@/components/Playlist";
 import Footer from "@/components/Footer";
-import ResponsiveLayout from "@/components/ResponsiveLayout";
 
-// Desktop content - original scrolling experience
-function DesktopContent() {
+export default function Home() {
   return (
     <main className="min-h-screen">
       <Navigation />
@@ -32,8 +30,4 @@ function DesktopContent() {
       <Footer />
     </main>
   );
-}
-
-export default function Home() {
-  return <ResponsiveLayout desktopContent={<DesktopContent />} />;
 }
