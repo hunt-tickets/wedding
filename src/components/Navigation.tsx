@@ -9,9 +9,9 @@ const navItems = [
   { name: "Nuestra Historia", href: "#historia" },
   { name: "Ceremonia", href: "#cronograma" },
   { name: "Ubicación", href: "#ubicacion" },
-  { name: "Alojamiento", href: "#alojamiento" },
   { name: "Regalos", href: "#regalos" },
   { name: "RSVP", href: "#rsvp" },
+  { name: "Invitados", href: "/invitados" },
 ];
 
 export default function Navigation() {
