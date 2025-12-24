@@ -12,9 +12,11 @@ interface BeforeInstallPromptEvent extends Event {
 export default function InstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showPrompt, setShowPrompt] = useState(false);
+  const [showStrip, setShowStrip] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [showIOSInstructions, setShowIOSInstructions] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
+  const [canInstall, setCanInstall] = useState(false);
 
   useEffect(() => {
     // Check if already installed
@@ -23,24 +25,36 @@ export default function InstallPrompt() {
       return;
     }
 
-    // Check if dismissed before
-    const dismissed = localStorage.getItem("pwa-prompt-dismissed");
-    if (dismissed) return;
+    // Check if permanently dismissed
+    const permanentlyDismissed = localStorage.getItem("pwa-prompt-permanent");
+    if (permanentlyDismissed) return;
+
+    // Check if modal was dismissed (show strip instead)
+    const modalDismissed = localStorage.getItem("pwa-prompt-dismissed");
 
     // Detect iOS
     const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as unknown as { MSStream?: unknown }).MSStream;
     setIsIOS(isIOSDevice);
 
     if (isIOSDevice) {
-      // Show prompt after a short delay on iOS
-      setTimeout(() => setShowPrompt(true), 2000);
+      setCanInstall(true);
+      if (modalDismissed) {
+        setShowStrip(true);
+      } else {
+        setTimeout(() => setShowPrompt(true), 2000);
+      }
     }
 
     // Listen for beforeinstallprompt (Chrome/Android/Edge)
     const handler = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
-      setTimeout(() => setShowPrompt(true), 2000);
+      setCanInstall(true);
+      if (modalDismissed) {
+        setShowStrip(true);
+      } else {
+        setTimeout(() => setShowPrompt(true), 2000);
+      }
     };
 
     window.addEventListener("beforeinstallprompt", handler);
@@ -54,6 +68,8 @@ export default function InstallPrompt() {
       const { outcome } = await deferredPrompt.userChoice;
       if (outcome === "accepted") {
         setShowPrompt(false);
+        setShowStrip(false);
+        setIsInstalled(true);
       }
       setDeferredPrompt(null);
     } else if (isIOS) {
@@ -61,17 +77,64 @@ export default function InstallPrompt() {
     }
   };
 
-  const handleDismiss = () => {
+  const handleDismissModal = () => {
     setShowPrompt(false);
     setShowIOSInstructions(false);
+    setShowStrip(true);
     localStorage.setItem("pwa-prompt-dismissed", "true");
   };
 
-  if (isInstalled || !showPrompt) return null;
+  const handleDismissStrip = () => {
+    setShowStrip(false);
+    localStorage.setItem("pwa-prompt-permanent", "true");
+  };
+
+  const handleOpenFromStrip = () => {
+    setShowStrip(false);
+    setShowPrompt(true);
+  };
+
+  if (isInstalled || (!showPrompt && !showStrip && !canInstall)) return null;
 
   return (
     <>
-      {/* Install Banner */}
+      {/* Top Strip - shows after modal is dismissed */}
+      <AnimatePresence>
+        {showStrip && !showPrompt && !showIOSInstructions && (
+          <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -100, opacity: 0 }}
+            className="fixed top-0 left-0 right-0 z-[200] bg-gold text-navy"
+          >
+            <div className="flex items-center justify-between px-4 py-2 max-w-7xl mx-auto">
+              <button
+                onClick={handleOpenFromStrip}
+                className="flex items-center gap-2 flex-1"
+              >
+                <Download className="w-4 h-4" />
+                <span className="text-sm font-medium">Instalar app para acceso rápido</span>
+              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={handleOpenFromStrip}
+                  className="px-3 py-1 bg-navy text-white text-xs rounded-full font-medium"
+                >
+                  Instalar
+                </button>
+                <button
+                  onClick={handleDismissStrip}
+                  className="p-1 text-navy/60 hover:text-navy"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Install Banner Modal */}
       <AnimatePresence>
         {showPrompt && !showIOSInstructions && (
           <motion.div
@@ -82,7 +145,7 @@ export default function InstallPrompt() {
           >
             <div className="bg-navy text-white rounded-2xl shadow-2xl p-4 border border-gold/20">
               <button
-                onClick={handleDismiss}
+                onClick={handleDismissModal}
                 className="absolute top-2 right-2 p-1 text-white/60 hover:text-white"
               >
                 <X className="w-4 h-4" />
@@ -118,7 +181,7 @@ export default function InstallPrompt() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[300] bg-black/70 flex items-end justify-center p-4"
-            onClick={handleDismiss}
+            onClick={handleDismissModal}
           >
             <motion.div
               initial={{ y: 100 }}
@@ -166,7 +229,7 @@ export default function InstallPrompt() {
 
               <div className="p-4 border-t">
                 <button
-                  onClick={handleDismiss}
+                  onClick={handleDismissModal}
                   className="w-full py-3 bg-navy text-white rounded-xl font-medium"
                 >
                   Entendido
