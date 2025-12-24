@@ -1,0 +1,151 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+
+const photos = [
+  {
+    src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+    alt: "Pareja en la playa",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80",
+    alt: "Momento romántico",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80",
+    alt: "Detalles de boda",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
+    alt: "Celebración",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80",
+    alt: "Atardecer juntos",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80",
+    alt: "Momentos especiales",
+  },
+];
+
+export default function Gallery() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => setSelectedImage(index);
+  const closeLightbox = () => setSelectedImage(null);
+  const nextImage = () =>
+    setSelectedImage((prev) => (prev !== null ? (prev + 1) % photos.length : null));
+  const prevImage = () =>
+    setSelectedImage((prev) =>
+      prev !== null ? (prev - 1 + photos.length) % photos.length : null
+    );
+
+  return (
+    <section id="galeria" className="py-24 md:py-32 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section Header */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <Camera className="w-8 h-8 text-gold mx-auto mb-6" />
+          <h2 className="font-serif text-4xl md:text-6xl text-navy mb-6">
+            Nuestra Galería
+          </h2>
+          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+            Algunos de nuestros momentos más especiales juntos
+          </p>
+          <div className="w-24 h-px bg-gold mx-auto mt-8" />
+        </motion.div>
+
+        {/* Photo Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {photos.map((photo, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              onClick={() => openLightbox(index)}
+              className="relative overflow-hidden rounded-xl cursor-pointer group aspect-square"
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/30 transition-colors duration-300 flex items-center justify-center">
+                <Camera className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedImage !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            <button
+              onClick={closeLightbox}
+              className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+            >
+              <X size={32} />
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                prevImage();
+              }}
+              className="absolute left-6 text-white/70 hover:text-white transition-colors"
+            >
+              <ChevronLeft size={48} />
+            </button>
+
+            <motion.img
+              key={selectedImage}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              src={photos[selectedImage].src}
+              alt={photos[selectedImage].alt}
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                nextImage();
+              }}
+              className="absolute right-6 text-white/70 hover:text-white transition-colors"
+            >
+              <ChevronRight size={48} />
+            </button>
+
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm">
+              {selectedImage + 1} / {photos.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+}
