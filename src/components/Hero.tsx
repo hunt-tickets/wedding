@@ -77,7 +77,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.4 }}
           className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light mb-2 sm:mb-4 leading-tight"
         >
-          Pablo José
+          María José
         </motion.h1>
 
         <motion.div
@@ -95,7 +95,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light mb-6 sm:mb-8 leading-tight"
         >
-          María José
+          Pablo José
         </motion.h1>
 
         <motion.div
