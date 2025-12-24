@@ -12,6 +12,7 @@ import RSVP from "@/components/RSVP";
 import Playlist from "@/components/Playlist";
 import Footer from "@/components/Footer";
 
+
 export default function Home() {
   return (
     <main className="min-h-screen">
