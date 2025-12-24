@@ -11,23 +11,26 @@ import FAQ from "@/components/FAQ";
 import RSVP from "@/components/RSVP";
 import Playlist from "@/components/Playlist";
 import Footer from "@/components/Footer";
+import AppWrapper from "@/components/AppWrapper";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <OurStory />
-      <Schedule />
-      <Location />
-      <Accommodation />
-      <DressCode />
-      <GiftRegistry />
-      <Gallery />
-      <FAQ />
-      <RSVP />
-      <Playlist />
-      <Footer />
-    </main>
+    <AppWrapper>
+      <main className="min-h-screen">
+        <Navigation />
+        <Hero />
+        <OurStory />
+        <Schedule />
+        <Location />
+        <Accommodation />
+        <DressCode />
+        <GiftRegistry />
+        <Gallery />
+        <FAQ />
+        <RSVP />
+        <Playlist />
+        <Footer />
+      </main>
+    </AppWrapper>
   );
 }
