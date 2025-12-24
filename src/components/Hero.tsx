@@ -128,23 +128,23 @@ export default function Hero() {
             Santa Marta, Colombia
           </p>
         </motion.div>
+      </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+      {/* Scroll indicator - outside parallax content, fixed at bottom of section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 2 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.a
+          href="#historia"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="text-white/70 hover:text-white transition-colors"
         >
-          <motion.a
-            href="#historia"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-white/70 hover:text-white transition-colors"
-          >
-            <ChevronDown size={32} />
-          </motion.a>
-        </motion.div>
+          <ChevronDown size={32} />
+        </motion.a>
       </motion.div>
     </section>
   );
