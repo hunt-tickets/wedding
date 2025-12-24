@@ -9,6 +9,8 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
+const STRIP_HEIGHT = 40; // Height of the install strip in pixels
+
 export default function InstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showPrompt, setShowPrompt] = useState(false);
@@ -17,6 +19,18 @@ export default function InstallPrompt() {
   const [showIOSInstructions, setShowIOSInstructions] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
   const [canInstall, setCanInstall] = useState(false);
+
+  // Add padding to body when strip is visible
+  useEffect(() => {
+    if (showStrip && !showPrompt && !showIOSInstructions) {
+      document.body.style.paddingTop = `${STRIP_HEIGHT}px`;
+    } else {
+      document.body.style.paddingTop = "0px";
+    }
+    return () => {
+      document.body.style.paddingTop = "0px";
+    };
+  }, [showStrip, showPrompt, showIOSInstructions]);
 
   useEffect(() => {
     // Check if already installed
@@ -98,14 +112,14 @@ export default function InstallPrompt() {
 
   return (
     <>
-      {/* Top Strip - shows after modal is dismissed, below navigation */}
+      {/* Top Strip - shows after modal is dismissed, above navigation */}
       <AnimatePresence>
         {showStrip && !showPrompt && !showIOSInstructions && (
           <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
-            className="fixed top-[72px] left-0 right-0 z-[40] bg-gold text-navy shadow-md"
+            className="fixed top-0 left-0 right-0 z-[60] bg-gold text-navy shadow-md"
           >
             <div className="flex items-center justify-between px-4 py-2 max-w-7xl mx-auto">
               <button
