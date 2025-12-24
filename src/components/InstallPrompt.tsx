@@ -98,14 +98,14 @@ export default function InstallPrompt() {
 
   return (
     <>
-      {/* Top Strip - shows after modal is dismissed */}
+      {/* Top Strip - shows after modal is dismissed, below navigation */}
       <AnimatePresence>
         {showStrip && !showPrompt && !showIOSInstructions && (
           <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
-            className="fixed top-0 left-0 right-0 z-[200] bg-gold text-navy"
+            className="fixed top-[72px] left-0 right-0 z-[40] bg-gold text-navy shadow-md"
           >
             <div className="flex items-center justify-between px-4 py-2 max-w-7xl mx-auto">
               <button
