@@ -32,7 +32,7 @@ const giftOptions = [
     bankInfo: {
       bank: "Bancolombia",
       account: "Ahorros: 123-456789-00",
-      name: "Pablo José & María José",
+      name: "María José & Pablo José",
     },
   },
 ];

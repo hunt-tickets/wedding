@@ -54,7 +54,7 @@ export default function Footer() {
           className="mb-6 sm:mb-8"
         >
           <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-navy mb-2">
-            Pablo José & María José
+            María José & Pablo José
           </h2>
           <p className="text-navy/60 text-sm sm:text-base">01 de Agosto de 2026 • Santa Marta, Colombia</p>
         </motion.div>
@@ -74,7 +74,7 @@ export default function Footer() {
             Hecho con <Heart className="w-4 h-4 text-gold fill-gold" /> para nuestro
             día especial
           </p>
-          <p className="mt-2">© 2026 Pablo José & María José. Todos los derechos reservados.</p>
+          <p className="mt-2">© 2026 María José & Pablo José. Todos los derechos reservados.</p>
         </motion.div>
       </div>
     </footer>
