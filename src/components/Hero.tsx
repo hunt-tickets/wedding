@@ -1,41 +1,67 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Countdown from "./Countdown";
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Parallax transforms - background moves slower than scroll
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  // Decorative elements parallax at different speeds
+  const circle1Y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  const circle2Y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background with overlay - bg-scroll on mobile for iOS compatibility */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
+      {/* Background with parallax effect */}
+      <motion.div
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.4), rgba(30, 58, 95, 0.6)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80')`,
+          y: backgroundY,
+          scale: backgroundScale,
         }}
       />
 
-      {/* Decorative elements - hidden on mobile for cleaner look */}
+      {/* Decorative elements with parallax - hidden on mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
           transition={{ duration: 2 }}
+          style={{ y: circle1Y }}
           className="absolute top-20 left-10 w-64 h-64 border border-white/30 rounded-full"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
           transition={{ duration: 2, delay: 0.5 }}
+          style={{ y: circle2Y }}
           className="absolute bottom-20 right-10 w-96 h-96 border border-white/20 rounded-full"
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-4xl mx-auto pt-16 md:pt-0">
+      {/* Content with parallax */}
+      <motion.div
+        className="relative z-10 text-center text-white px-4 sm:px-6 max-w-4xl mx-auto pt-16 md:pt-0"
+        style={{ y: contentY, opacity: contentOpacity }}
+      >
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,7 +148,7 @@ export default function Hero() {
             <ChevronDown size={32} />
           </motion.a>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
