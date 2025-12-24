@@ -105,31 +105,28 @@ export default function Hero() {
           className="w-24 h-px bg-gold mx-auto mb-8"
         />
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="text-lg sm:text-xl md:text-2xl tracking-wide font-light mb-1 sm:mb-2"
-        >
-          01 de Agosto de 2026
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="text-base sm:text-lg md:text-xl tracking-wide font-light text-white/80"
-        >
-          Santa Marta, Colombia
-        </motion.p>
-
         {/* Countdown */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.6 }}
+          transition={{ duration: 0.8, delay: 1.4 }}
         >
           <Countdown targetDate="2026-08-01T17:00:00" />
+        </motion.div>
+
+        {/* Date and Location - below countdown */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+          className="mt-8 sm:mt-12"
+        >
+          <p className="text-lg sm:text-xl md:text-2xl tracking-wide font-light mb-1 sm:mb-2">
+            01 de Agosto de 2026
+          </p>
+          <p className="text-base sm:text-lg md:text-xl tracking-wide font-light text-white/80">
+            Santa Marta, Colombia
+          </p>
         </motion.div>
 
         {/* Scroll indicator */}
