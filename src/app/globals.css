@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Tenor+Sans&display=swap');
 @import "tailwindcss";
 
 @theme inline {
@@ -11,8 +11,8 @@
   --color-blue-light: #e8eef4;
   --color-gold: #c9a962;
   --color-gold-light: #d4bc7d;
-  --font-serif: "Cormorant Garamond", serif;
-  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Poiret One", sans-serif;
+  --font-sans: "Tenor Sans", sans-serif;
 }
 
 html {
