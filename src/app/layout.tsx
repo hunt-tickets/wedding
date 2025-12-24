@@ -1,15 +1,34 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
 
 export const metadata: Metadata = {
-  title: "Pablo José & María José | 01 de Agosto 2026",
+  title: "María José & Pablo José | 01 de Agosto 2026",
   description: "Estás invitado a celebrar nuestra boda en Santa Marta, Colombia. ¡Te esperamos!",
-  keywords: ["boda", "wedding", "Pablo José", "María José", "Santa Marta", "Colombia"],
+  keywords: ["boda", "wedding", "María José", "Pablo José", "Santa Marta", "Colombia"],
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "M & P Boda",
+  },
   openGraph: {
-    title: "Pablo José & María José - Nuestra Boda",
+    title: "María José & Pablo José - Nuestra Boda",
     description: "01 de Agosto 2026 | Santa Marta, Colombia",
     type: "website",
   },
+  icons: {
+    icon: "/icons/icon.svg",
+    apple: "/icons/apple-touch-icon.png",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1e3a5f",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -19,7 +38,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="M & P Boda" />
+      </head>
       <body className="antialiased">
+        <ServiceWorkerRegistration />
         {children}
       </body>
     </html>
