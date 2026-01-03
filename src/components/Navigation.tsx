@@ -11,7 +11,6 @@ const navItems = [
   { name: "Ubicación", href: "#ubicacion" },
   { name: "Regalos", href: "#regalos" },
   { name: "RSVP", href: "#rsvp" },
-  { name: "Invitados", href: "/invitados" },
 ];
 
 export default function Navigation() {
