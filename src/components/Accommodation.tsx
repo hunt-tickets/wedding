@@ -3,37 +3,63 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Hotel, Star, MapPin, ExternalLink } from "lucide-react";
+import { Hotel, Star, ExternalLink } from "lucide-react";
 
 const hotels = [
+  {
+    name: "AC Hotel Marriott",
+    stars: 4,
+    description:
+      "Moderno hotel con diseño contemporáneo, ubicado cerca del centro histórico.",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+    url: "#",
+  },
+  {
+    name: "Hilton Garden Inn",
+    stars: 4,
+    description:
+      "Hotel de primera clase con excelentes servicios y comodidades para tu estadía.",
+    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
+    url: "#",
+  },
   {
     name: "Hotel Boutique Don Pepe",
     stars: 5,
     description:
       "Lujoso hotel boutique en el corazón del centro histórico con vistas al mar Caribe.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
-    price: "Desde $350.000/noche",
-    distance: "15 min del venue",
+    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
     url: "#",
   },
   {
-    name: "Casa del Mar Resort",
+    name: "Marriott Playa Dormida",
+    stars: 5,
+    description:
+      "Resort exclusivo frente al mar con todas las comodidades para una estadía inolvidable.",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80",
+    url: "#",
+  },
+  {
+    name: "Hotel Mercure",
     stars: 4,
     description:
-      "Resort frente al mar con spa, piscina infinita y acceso directo a la playa privada.",
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
-    price: "Desde $280.000/noche",
-    distance: "20 min del venue",
+      "Hotel con encanto francés y excelente ubicación cerca de la zona turística.",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80",
     url: "#",
   },
   {
-    name: "Hostal Sierra Nevada",
+    name: "Irotama Resort",
+    stars: 5,
+    description:
+      "Resort todo incluido en Pozos Colorados con amplias instalaciones y playa privada.",
+    image: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=600&q=80",
+    url: "#",
+  },
+  {
+    name: "Hotel Pombal",
     stars: 3,
     description:
-      "Opción económica y acogedora con desayuno incluido y ambiente familiar.",
-    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
-    price: "Desde $120.000/noche",
-    distance: "25 min del venue",
+      "Opción encantadora y acogedora con excelente relación calidad-precio.",
+    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
     url: "#",
   },
 ];
@@ -73,15 +99,9 @@ function HotelCard({
 
       <div className="p-4 sm:p-6">
         <h3 className="font-serif text-xl sm:text-2xl text-navy mb-2">{hotel.name}</h3>
-        <p className="text-navy/60 text-sm sm:text-base mb-3 sm:mb-4">{hotel.description}</p>
+        <p className="text-navy/60 text-sm sm:text-base mb-4">{hotel.description}</p>
 
-        <div className="flex items-center gap-2 text-xs sm:text-sm text-navy/50 mb-3 sm:mb-4">
-          <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-          {hotel.distance}
-        </div>
-
-        <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100">
-          <span className="text-gold font-medium text-sm sm:text-base">{hotel.price}</span>
+        <div className="flex items-center justify-end pt-3 sm:pt-4 border-t border-gray-100">
           <a
             href={hotel.url}
             target="_blank"
@@ -137,8 +157,7 @@ export default function Accommodation() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center text-navy/50 mt-12 text-sm"
         >
-          * Menciona &quot;Boda Pablo & María José&quot; al reservar para obtener
-          tarifas especiales
+          Opciones cerca de la ceremonia y fiesta, o en Pozos Colorados
         </motion.p>
       </div>
     </section>

@@ -17,7 +17,7 @@ export default function Footer() {
         >
           <p className="text-navy/50 text-sm sm:text-base mb-2">Comparte tus fotos con nuestro hashtag</p>
           <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-navy break-all sm:break-normal">
-            #PabloYMariaJose2026
+            #MariaJoseYPabloJose
           </h3>
         </motion.div>
 

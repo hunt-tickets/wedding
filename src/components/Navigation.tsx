@@ -45,7 +45,7 @@ export default function Navigation() {
               isScrolled ? "text-navy" : "text-white"
             }`}
           >
-            M & P
+            MJ & PJ
           </a>
 
           {/* Desktop Menu */}
@@ -86,7 +86,7 @@ export default function Navigation() {
           >
             <div className="flex flex-col h-full">
               <div className="flex justify-between items-center p-6">
-                <span className="font-serif text-2xl text-white">M & P</span>
+                <span className="font-serif text-2xl text-white">MJ & PJ</span>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-white p-2"

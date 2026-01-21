@@ -40,8 +40,7 @@ export default function DressCode() {
             <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4">Formal</h3>
             <p className="text-white/80 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-8">
               Te invitamos a vestir de manera elegante para esta celebración
-              especial. Traje formal para caballeros y vestido largo o cocktail
-              para damas.
+              especial.
             </p>
 
             <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-10">
@@ -64,9 +63,7 @@ export default function DressCode() {
                 </div>
                 <h4 className="font-serif text-xl sm:text-2xl mb-1 sm:mb-2">Caballeros</h4>
                 <p className="text-white/70 text-sm sm:text-base">
-                  Traje formal oscuro
-                  <br />
-                  Corbata o pajarita
+                  Smoking
                 </p>
               </div>
 
@@ -89,15 +86,13 @@ export default function DressCode() {
                 </div>
                 <h4 className="font-serif text-xl sm:text-2xl mb-1 sm:mb-2">Damas</h4>
                 <p className="text-white/70 text-sm sm:text-base">
-                  Vestido largo o cocktail
-                  <br />
-                  Tacones elegantes
+                  Vestido largo
                 </p>
               </div>
             </div>
 
             <p className="text-gold mt-8 sm:mt-10 text-xs sm:text-sm tracking-wide">
-              * Por favor evitar el color blanco, reservado para la novia
+              * Color blanco y azul navy reservados
             </p>
           </motion.div>
         </motion.div>

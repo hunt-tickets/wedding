@@ -7,31 +7,45 @@ import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
 
 const storyEvents = [
   {
-    year: "2018",
+    year: "29.07.2023",
     title: "Nos Conocimos",
     description:
-      "Fue en una tarde de verano cuando nuestros caminos se cruzaron por primera vez. Una mirada, una sonrisa, y supimos que algo especial estaba por comenzar.",
+      "Fue una noche de verano cuando nuestros caminos se cruzaron por primera vez. En el lugar menos esperado, solo bastó una mirada, una sonrisa y supimos que algo especial estaba por comenzar.",
     image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80",
   },
   {
-    year: "2019",
+    year: "04.08.2023",
     title: "Primera Cita",
     description:
-      "Nerviosos pero emocionados, compartimos nuestra primera cena juntos. Las horas pasaron volando mientras descubríamos lo mucho que teníamos en común.",
+      "Nerviosos pero emocionados, rápidamente acordamos vernos en Emilia Grace. Las horas pasaron volando mientras descubríamos que no había vuelta atrás.",
     image: "https://images.unsplash.com/photo-1511306404404-ad607bd7c601?auto=format&fit=crop&w=800&q=80",
   },
   {
-    year: "2021",
-    title: "Mudamos Juntos",
+    year: "06.10.2023",
+    title: "Relación a Distancia",
     description:
-      "Después de años de amor, decidimos dar el siguiente paso y construir un hogar juntos. Cada día fue una nueva aventura compartida.",
+      "Después de conocer una de las ciudades más románticas y especiales de Colombia, y de aceptar que la conexión que sentíamos no tenía comparación, decidimos intentar tener una relación a distancia.",
     image: "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=800&q=80",
   },
   {
-    year: "2025",
+    year: "2024",
+    title: "Citas Alrededor del Mundo",
+    description:
+      "Tuvimos citas alrededor del mundo, primero en Paris, luego en Fontaineblue, después en Philadelphia, y finalizando en Singapur…",
+    image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    year: "14.03.2025",
+    title: "Nuestro Hogar en Madrid",
+    description:
+      "Después de varios meses a distancia, y de que nos llegara la noticia de que habías conseguido el puesto soñado en Madrid, decidimos dar el siguiente paso y aventurarnos y construir un hogar juntos. Cada día fue una nueva aventura compartida.",
+    image: "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    year: "09.08.2025",
     title: "La Propuesta",
     description:
-      "Bajo un cielo estrellado, con el corazón latiendo a mil, llegó la pregunta más importante. Y la respuesta fue un rotundo ¡SÍ!",
+      "Cerca del fin del mundo, muy enamorados, llegó la pregunta más importante.. y la respuesta, después de unos llantos, fue un rotundo si!!!",
     image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
   },
 ];

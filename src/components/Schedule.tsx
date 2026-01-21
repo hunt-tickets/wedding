@@ -7,25 +7,31 @@ import { Church, Wine, UtensilsCrossed, Music, Calendar } from "lucide-react";
 
 const scheduleItems = [
   {
-    time: "5:00 PM",
+    time: "6:30 PM",
+    title: "Llegada a la Ceremonia",
+    description: "Te esperamos en la Catedral Basílica de Santa Marta",
+    icon: Church,
+  },
+  {
+    time: "7:00 PM",
     title: "Ceremonia",
     description: "Únete a nosotros mientras intercambiamos nuestros votos de amor eterno",
     icon: Church,
   },
   {
-    time: "6:30 PM",
-    title: "Cóctel de Bienvenida",
-    description: "Disfruta de bebidas refrescantes y canapés mientras nos preparamos para celebrar",
+    time: "8:30 PM",
+    title: "Llegada a la Recepción",
+    description: "Nos trasladamos al Club Santa Marta para continuar la celebración",
     icon: Wine,
   },
   {
-    time: "8:00 PM",
+    time: "9:00 PM",
     title: "Cena",
     description: "Una exquisita cena para deleitar tu paladar en una noche inolvidable",
     icon: UtensilsCrossed,
   },
   {
-    time: "10:00 PM",
+    time: "10:30 PM",
     title: "Fiesta",
     description: "¡Es hora de bailar y celebrar el amor hasta el amanecer!",
     icon: Music,

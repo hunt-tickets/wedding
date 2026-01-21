@@ -8,11 +8,11 @@ import { Gift, Home, Plane, CreditCard, Heart } from "lucide-react";
 const giftOptions = [
   {
     icon: Home,
-    title: "Nuestro Hogar",
+    title: "Nuestro Futuro Hogar",
     description:
-      "Ayúdanos a amueblar y decorar nuestro nuevo hogar con artículos de nuestra lista.",
+      "Ayúdanos con lo que tu quieras para nuestro nuevo hogar.",
     link: "#",
-    linkText: "Ver lista de regalos",
+    linkText: "Contribuir",
   },
   {
     icon: Plane,
@@ -30,9 +30,10 @@ const giftOptions = [
     link: "#",
     linkText: "Ver datos bancarios",
     bankInfo: {
-      bank: "Bancolombia",
-      account: "Ahorros: 123-456789-00",
-      name: "María José & Pablo José",
+      bank: "BBVA España",
+      iban: "ES02 0182 4028 7802 0165 5902",
+      swift: "BBVAESMM",
+      name: "Maria Jose Lizcano Gomez",
     },
   },
 ];
@@ -69,7 +70,10 @@ function GiftCard({
             <strong>Banco:</strong> {option.bankInfo.bank}
           </p>
           <p className="text-sm text-navy/80">
-            <strong>Cuenta:</strong> {option.bankInfo.account}
+            <strong>IBAN:</strong> {option.bankInfo.iban}
+          </p>
+          <p className="text-sm text-navy/80">
+            <strong>Código Swift:</strong> {option.bankInfo.swift}
           </p>
           <p className="text-sm text-navy/80">
             <strong>Titular:</strong> {option.bankInfo.name}
@@ -105,7 +109,7 @@ export default function GiftRegistry() {
         >
           <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-gold mx-auto mb-4 sm:mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-navy mb-4 sm:mb-6">
-            Mesa de Regalos
+            Lista de Novios
           </h2>
           <p className="text-navy/60 text-base sm:text-lg max-w-2xl mx-auto">
             Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo,

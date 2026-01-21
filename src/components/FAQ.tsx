@@ -19,17 +19,17 @@ const faqs = [
   {
     question: "¿Hay estacionamiento disponible?",
     answer:
-      "Sí, el venue cuenta con amplio estacionamiento gratuito para todos los invitados. También habrá servicio de valet parking disponible.",
+      "Recomendamos no llevar carro, las opciones de estacionamiento son limitadas y no se encuentran cerca de los lugares.",
   },
   {
     question: "¿Qué tipo de comida se servirá?",
     answer:
-      "Tendremos un menú gourmet con opciones de carne, pescado y vegetariana. Si tienes alguna alergia o restricción alimentaria, por favor indícalo en tu confirmación.",
+      "Tendremos un buffet así que se pueden servir lo que quieran, hay opciones para todos.",
   },
   {
     question: "¿Habrá transporte desde los hoteles?",
     answer:
-      "Sí, organizaremos transporte desde los hoteles recomendados al venue y de regreso. Los horarios se enviarán más cerca de la fecha.",
+      "Hay un servicio muy bueno de taxi Irotama +57 304 207 6640. Sí contamos con transporte de la catedral al club.",
   },
   {
     question: "¿Puedo tomar fotos durante la ceremonia?",
@@ -39,12 +39,12 @@ const faqs = [
   {
     question: "¿Cuál es la fecha límite para confirmar?",
     answer:
-      "Por favor, confirma tu asistencia antes del 1 de Julio de 2026. Esto nos ayudará con la planificación final del evento.",
+      "Por favor, confirma tu asistencia antes del 1 de julio. Nuestra wedding planner María Paola va a estar llamándote para que confirmes.",
   },
   {
     question: "¿Qué pasa si llueve?",
     answer:
-      "El venue tiene áreas techadas y carpas de respaldo. ¡La celebración continuará sin importar el clima!",
+      "Tanto la ceremonia como la fiesta ocurrirán bajo techo así que no hay problema. ¡La celebración continuará sin importar el clima!",
   },
 ];
 
