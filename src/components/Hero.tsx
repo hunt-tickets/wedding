@@ -33,7 +33,7 @@ export default function Hero() {
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.4), rgba(30, 58, 95, 0.6)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80')`,
+          backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.4), rgba(30, 58, 95, 0.6)), url('/images/hero-beach.jpg')`,
           y: backgroundY,
           scale: backgroundScale,
         }}
