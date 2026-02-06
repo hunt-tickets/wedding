@@ -235,7 +235,7 @@ export default function InstallPrompt() {
 
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center shrink-0">
-                    <span className="text-gold font-serif font-bold">M&P</span>
+                    <span className="text-gold font-serif font-bold">MP&PJ</span>
                   </div>
                   <div>
                     <p className="font-medium text-navy">3. ¡Listo!</p>

@@ -84,7 +84,7 @@ export default function SplashScreen({
                 className="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8"
               />
 
-              {/* M & P */}
+              {/* MP & PJ */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={
@@ -95,7 +95,7 @@ export default function SplashScreen({
                 transition={{ duration: 0.6, delay: isAnimatingOut ? 0 : 0.5 }}
                 className="font-serif text-7xl sm:text-8xl md:text-9xl tracking-wider"
               >
-                <span className="text-gold">M</span>
+                <span className="text-gold">MP</span>
                 <motion.span
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -104,7 +104,7 @@ export default function SplashScreen({
                 >
                   &
                 </motion.span>
-                <span className="text-gold">P</span>
+                <span className="text-gold">PJ</span>
               </motion.div>
 
               {/* Decorative line bottom */}

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "M & P Boda",
+    title: "MP & PJ Boda",
   },
   openGraph: {
     title: "María José & Pablo José - Nuestra Boda",
@@ -43,7 +43,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="M & P Boda" />
+        <meta name="apple-mobile-web-app-title" content="MP & PJ Boda" />
       </head>
       <body className="antialiased">
         <ServiceWorkerRegistration />
