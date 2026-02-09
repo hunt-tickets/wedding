@@ -122,7 +122,7 @@ export default function Accommodation() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="alojamiento" className="py-16 sm:py-24 md:py-32 bg-white">
+    <section id="alojamiento" className="pt-16 sm:pt-24 md:pt-32 pb-8 sm:pb-12 md:pb-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div

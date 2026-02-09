@@ -10,7 +10,7 @@ export default function Weather() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="clima" className="py-16 sm:py-24 md:py-32 bg-white">
+    <section id="clima" className="pt-8 sm:pt-12 md:pt-16 pb-16 sm:pb-24 md:pb-32 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div

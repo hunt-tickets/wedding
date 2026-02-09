@@ -92,8 +92,7 @@ export default function OurStory() {
             Nuestra Historia
           </h2>
           <p className="text-navy/60 text-base sm:text-lg max-w-2xl mx-auto px-2">
-            Un viaje de amor que comenzó hace años y que ahora nos lleva al día más
-            especial de nuestras vidas
+            Fue un amor a primera vista que superó la distancia y ahora nos lleva al día más especial de nuestras vidas
           </p>
           <div className="w-16 sm:w-24 h-px bg-gold mx-auto mt-6 sm:mt-8" />
         </motion.div>
