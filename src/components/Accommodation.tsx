@@ -11,56 +11,56 @@ const hotels = [
     stars: 4,
     description:
       "Moderno hotel con diseño contemporáneo, ubicado cerca del centro histórico.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
-    url: "#",
+    image: "https://cache.marriott.com/content/dam/marriott-renditions/SMRSM/smrsm-exterior-0017-hor-wide.jpg",
+    url: "https://www.marriott.com/en-us/hotels/smrsm-ac-hotel-santa-marta/",
   },
   {
     name: "Hilton Garden Inn",
     stars: 4,
     description:
       "Hotel de primera clase con excelentes servicios y comodidades para tu estadía.",
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
-    url: "#",
+    image: "https://www.hilton.com/im/en/SMRGIGI/14791405/smrgigi-exterior-002.jpg",
+    url: "https://www.hilton.com/en/hotels/smrgigi-hilton-garden-inn-santa-marta/",
   },
   {
     name: "Hotel Boutique Don Pepe",
     stars: 5,
     description:
       "Lujoso hotel boutique en el corazón del centro histórico con vistas al mar Caribe.",
-    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
-    url: "#",
+    image: "https://hotelboutiquedonpepe.com/m/fotosdelhotel/Hotel-Boutique-Exterior-17.jpg",
+    url: "https://hotelboutiquedonpepe.com/?lang=en",
   },
   {
     name: "Marriott Playa Dormida",
     stars: 5,
     description:
       "Resort exclusivo frente al mar con todas las comodidades para una estadía inolvidable.",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80",
-    url: "#",
+    image: "https://cache.marriott.com/content/dam/marriott-renditions/SMRMC/smrmc-exterior-0069-hor-wide.jpg",
+    url: "https://www.marriott.com/en-us/hotels/smrmc-santa-marta-marriott-resort-playa-dormida/",
   },
   {
     name: "Hotel Mercure",
     stars: 4,
     description:
       "Hotel con encanto francés y excelente ubicación cerca de la zona turística.",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80",
-    url: "#",
+    image: "https://all.accor.com/ssr/app/accor/rates/9556/index.en.shtml?compositions=1&stayDate=2024-01-01",
+    url: "https://all.accor.com/hotel/9556/index.en.shtml",
   },
   {
     name: "Irotama Resort",
     stars: 5,
     description:
       "Resort todo incluido en Pozos Colorados con amplias instalaciones y playa privada.",
-    image: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=600&q=80",
-    url: "#",
+    image: "https://www.irotama.com/wp-content/uploads/2023/01/irotama-resort-santa-marta-header.jpg",
+    url: "https://www.irotama.com/",
   },
   {
     name: "Hotel Pombal",
     stars: 3,
     description:
       "Opción encantadora y acogedora con excelente relación calidad-precio.",
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
-    url: "#",
+    image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/489305916.jpg",
+    url: "https://www.expedia.com/Santa-Marta-Hotels-HOTEL-LIBRERIA-CAFE-DE-POMBAL.h124486481.Hotel-Information",
   },
 ];
 

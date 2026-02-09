@@ -3,7 +3,40 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Navigation as NavIcon, Clock, Phone } from "lucide-react";
+import { MapPin, Navigation as NavIcon, Clock, Phone, Church, Wine, UtensilsCrossed, Music, Calendar } from "lucide-react";
+
+const scheduleItems = [
+  {
+    time: "6:30 PM",
+    title: "Llegada a la Ceremonia",
+    description: "Te esperamos en la Catedral Basílica de Santa Marta",
+    icon: Church,
+  },
+  {
+    time: "7:00 PM",
+    title: "Ceremonia",
+    description: "Únete a nosotros mientras intercambiamos nuestros votos de amor eterno",
+    icon: Church,
+  },
+  {
+    time: "8:30 PM",
+    title: "Llegada a la Recepción",
+    description: "Nos trasladamos al Club Santa Marta para continuar la celebración",
+    icon: Wine,
+  },
+  {
+    time: "9:00 PM",
+    title: "Cena",
+    description: "Una exquisita cena para deleitar tu paladar en una noche inolvidable",
+    icon: UtensilsCrossed,
+  },
+  {
+    time: "10:30 PM",
+    title: "Fiesta",
+    description: "¡Es hora de bailar y celebrar el amor hasta el amanecer!",
+    icon: Music,
+  },
+];
 
 export default function Location() {
   const ref = useRef(null);
@@ -29,6 +62,67 @@ export default function Location() {
           </p>
           <div className="w-16 sm:w-24 h-px bg-gold mx-auto mt-6 sm:mt-8" />
         </motion.div>
+
+        {/* Cronograma Timeline */}
+        <div className="relative mb-16 sm:mb-24">
+          {/* Vertical line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gold/30 transform md:-translate-x-1/2" />
+
+          <div className="space-y-12">
+            {scheduleItems.map((item, index) => {
+              const Icon = item.icon;
+              const isEven = index % 2 === 0;
+
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  className={`relative flex items-center gap-8 ${
+                    isEven ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-gold rounded-full transform md:-translate-x-1/2 z-10" />
+
+                  {/* Content */}
+                  <div
+                    className={`ml-12 md:ml-0 md:w-1/2 ${
+                      isEven ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"
+                    }`}
+                  >
+                    <div
+                      className={`bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow ${
+                        isEven ? "md:ml-auto" : ""
+                      } max-w-md`}
+                    >
+                      <div
+                        className={`flex items-center gap-4 mb-4 ${
+                          isEven ? "md:flex-row-reverse" : ""
+                        }`}
+                      >
+                        <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-gold font-serif text-2xl">
+                          {item.time}
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-2xl text-navy mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-navy/60">{item.description}</p>
+                    </div>
+                  </div>
+
+                  {/* Spacer for alternating layout */}
+                  <div className="hidden md:block md:w-1/2" />
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
 
         {/* Ceremonia */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16 sm:mb-24">

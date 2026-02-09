@@ -14,15 +14,39 @@ const heroImages = [
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
 
-  // Rotate images every 5 seconds
+  const imageDuration = 8000; // 8 seconds per image
+
+  // Rotate images every 8 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+      setProgress(0);
+    }, imageDuration);
 
     return () => clearInterval(interval);
   }, []);
+
+  // Update progress indicator
+  useEffect(() => {
+    setProgress(0);
+    const startTime = Date.now();
+
+    const progressInterval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const newProgress = (elapsed / imageDuration) * 100;
+
+      if (newProgress >= 100) {
+        setProgress(100);
+        clearInterval(progressInterval);
+      } else {
+        setProgress(newProgress);
+      }
+    }, 50);
+
+    return () => clearInterval(progressInterval);
+  }, [currentImageIndex]);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -47,16 +71,16 @@ export default function Hero() {
     >
       {/* Background with parallax effect and image rotation */}
       <div className="absolute inset-0">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div
             key={currentImageIndex}
             className="absolute inset-0 bg-cover bg-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            exit={{ opacity: 0, filter: "blur(10px)" }}
+            transition={{ duration: 1.8 }}
             style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.4), rgba(30, 58, 95, 0.6)), url('${heroImages[currentImageIndex]}')`,
+              backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.2), rgba(30, 58, 95, 0.3)), url('${heroImages[currentImageIndex]}')`,
               y: backgroundY,
               scale: backgroundScale,
             }}
@@ -171,6 +195,41 @@ export default function Hero() {
           <ChevronDown size={32} />
         </motion.a>
       </motion.div>
+
+      {/* Progress indicator - bottom right corner */}
+      <div className="absolute bottom-8 right-8 z-20">
+        <div className="relative w-12 h-12">
+          {/* Background circle */}
+          <svg className="w-12 h-12 transform -rotate-90">
+            <circle
+              cx="24"
+              cy="24"
+              r="20"
+              stroke="rgba(255, 255, 255, 0.2)"
+              strokeWidth="2"
+              fill="none"
+            />
+            {/* Progress circle */}
+            <circle
+              cx="24"
+              cy="24"
+              r="20"
+              stroke="rgba(212, 175, 55, 0.9)"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray={`${2 * Math.PI * 20}`}
+              strokeDashoffset={`${2 * Math.PI * 20 * (1 - progress / 100)}`}
+              className="transition-all duration-50 ease-linear"
+            />
+          </svg>
+          {/* Image counter */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-white/80 text-xs font-light">
+              {currentImageIndex + 1}/{heroImages.length}
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
