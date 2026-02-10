@@ -9,6 +9,7 @@ const navItems = [
   { name: "Nuestra Historia", href: "#historia" },
   { name: "Ceremonia", href: "#cronograma" },
   { name: "Ubicación", href: "#ubicacion" },
+  { name: "Contactos", href: "#contactos" },
   { name: "Regalos", href: "#regalos" },
   { name: "RSVP", href: "#rsvp" },
 ];
