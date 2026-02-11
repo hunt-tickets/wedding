@@ -11,7 +11,7 @@ const hotels = [
     stars: 4,
     description:
       "Moderno hotel con diseño contemporáneo, ubicado cerca del centro histórico.",
-    image: "https://cache.marriott.com/content/dam/marriott-renditions/SMRSM/smrsm-exterior-0017-hor-wide.jpg",
+    image: "/images/hotel-ac-marriott.avif",
     url: "https://www.marriott.com/en-us/hotels/smrsm-ac-hotel-santa-marta/",
   },
   {
@@ -19,7 +19,7 @@ const hotels = [
     stars: 4,
     description:
       "Hotel de primera clase con excelentes servicios y comodidades para tu estadía.",
-    image: "https://www.hilton.com/im/en/SMRGIGI/14791405/smrgigi-exterior-002.jpg",
+    image: "/images/hotel-hilton.jpg",
     url: "https://www.hilton.com/en/hotels/smrgigi-hilton-garden-inn-santa-marta/",
   },
   {
@@ -27,7 +27,7 @@ const hotels = [
     stars: 5,
     description:
       "Lujoso hotel boutique en el corazón del centro histórico con vistas al mar Caribe.",
-    image: "https://hotelboutiquedonpepe.com/m/fotosdelhotel/Hotel-Boutique-Exterior-17.jpg",
+    image: "/images/hotel-don-pepe.webp",
     url: "https://hotelboutiquedonpepe.com/?lang=en",
   },
   {
@@ -35,7 +35,7 @@ const hotels = [
     stars: 5,
     description:
       "Resort exclusivo frente al mar con todas las comodidades para una estadía inolvidable.",
-    image: "https://cache.marriott.com/content/dam/marriott-renditions/SMRMC/smrmc-exterior-0069-hor-wide.jpg",
+    image: "/images/hotel-marriott-playa.jpg",
     url: "https://www.marriott.com/en-us/hotels/smrmc-santa-marta-marriott-resort-playa-dormida/",
   },
   {
@@ -43,7 +43,7 @@ const hotels = [
     stars: 4,
     description:
       "Hotel con encanto francés y excelente ubicación cerca de la zona turística.",
-    image: "https://all.accor.com/ssr/app/accor/rates/9556/index.en.shtml?compositions=1&stayDate=2024-01-01",
+    image: "/images/hotel-mercure.avif",
     url: "https://all.accor.com/hotel/9556/index.en.shtml",
   },
   {
@@ -51,7 +51,7 @@ const hotels = [
     stars: 5,
     description:
       "Resort todo incluido en Pozos Colorados con amplias instalaciones y playa privada.",
-    image: "https://www.irotama.com/wp-content/uploads/2023/01/irotama-resort-santa-marta-header.jpg",
+    image: "/images/hotel-irotama.jpg",
     url: "https://www.irotama.com/",
   },
   {
