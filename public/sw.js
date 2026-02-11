@@ -1,73 +1,68 @@
-const CACHE_NAME = 'mp-boda-v1';
-const urlsToCache = [
-  '/',
-  '/manifest.json',
-  '/icons/icon.svg',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
-  '/icons/apple-touch-icon.png'
-];
+const CACHE_VERSION = Date.now(); // Cambia con cada deploy
+const CACHE_NAME = `mp-boda-v${CACHE_VERSION}`;
 
-// Install event - cache essential resources
+// Install event - skip waiting immediately to activate new version
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-      .then(() => self.skipWaiting())
-  );
+  console.log('[SW] Installing new version:', CACHE_VERSION);
+  // Force the waiting service worker to become the active service worker
+  self.skipWaiting();
 });
 
-// Activate event - clean up old caches
+// Activate event - delete ALL old caches and take control
 self.addEventListener('activate', (event) => {
+  console.log('[SW] Activating new version:', CACHE_VERSION);
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
+    Promise.all([
+      // Delete ALL caches
+      caches.keys().then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            console.log('[SW] Deleting cache:', cacheName);
             return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => self.clients.claim())
+          })
+        );
+      }),
+      // Take control of all clients immediately
+      self.clients.claim()
+    ]).then(() => {
+      // Reload all clients to get fresh content
+      return self.clients.matchAll().then(clients => {
+        clients.forEach(client => {
+          client.postMessage({ type: 'CACHE_CLEARED', version: CACHE_VERSION });
+        });
+      });
+    })
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - NETWORK FIRST strategy (always fresh content)
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
+    // Always try network first
+    fetch(event.request)
       .then((response) => {
-        // Return cached version or fetch from network
-        if (response) {
-          return response;
-        }
-
-        return fetch(event.request).then((response) => {
-          // Don't cache non-successful responses or non-GET requests
-          if (!response || response.status !== 200 || response.type !== 'basic' || event.request.method !== 'GET') {
-            return response;
-          }
-
-          // Clone the response
-          const responseToCache = response.clone();
-
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-
-          return response;
-        });
+        // Don't cache anything - always serve fresh
+        return response;
       })
-      .catch(() => {
-        // Return offline fallback for navigation requests
+      .catch((error) => {
+        console.log('[SW] Network request failed:', error);
+        // Only for navigation, try to serve from cache as fallback
         if (event.request.mode === 'navigate') {
-          return caches.match('/');
+          return caches.match('/').catch(() => {
+            return new Response('Offline - Please check your connection', {
+              status: 503,
+              statusText: 'Service Unavailable'
+            });
+          });
         }
+        throw error;
       })
   );
+});
+
+// Listen for messages from clients
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
