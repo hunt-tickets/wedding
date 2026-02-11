@@ -16,6 +16,9 @@ import Playlist from "@/components/Playlist";
 import Footer from "@/components/Footer";
 import AppWrapper from "@/components/AppWrapper";
 
+// Force dynamic rendering and disable all caching
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default function Home() {
   return (
