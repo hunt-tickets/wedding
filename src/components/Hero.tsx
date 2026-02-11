@@ -5,18 +5,48 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { ChevronDown } from "lucide-react";
 import Countdown from "./Countdown";
 
-const heroImages = [
-  "/images/hero-1.jpg",
-  "/images/hero-2.jpg",
-  "/images/hero-3.jpg",
+// Mobile images (vertical/portrait)
+const mobileImages = [
+  "/images/hero-vertical-1.jpg",
+  "/images/hero-vertical-2.jpg",
+];
+
+// Desktop images (horizontal/landscape)
+const desktopImages = [
+  "/images/hero-horizontal-1.jpg",
+  "/images/hero-horizontal-2.jpg",
+  "/images/hero-horizontal-3.jpg",
 ];
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const imageDuration = 8000; // 8 seconds per image
+
+  // Detect screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Get current image set based on screen size
+  const heroImages = isMobile ? mobileImages : desktopImages;
+
+  // Reset index when switching between mobile/desktop to prevent out-of-bounds
+  useEffect(() => {
+    if (currentImageIndex >= heroImages.length) {
+      setCurrentImageIndex(0);
+      setProgress(0);
+    }
+  }, [heroImages.length, currentImageIndex]);
 
   // Rotate images every 8 seconds
   useEffect(() => {
@@ -26,7 +56,7 @@ export default function Hero() {
     }, imageDuration);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [heroImages.length]);
 
   // Update progress indicator
   useEffect(() => {
