@@ -12,7 +12,6 @@ import GiftRegistry from "@/components/GiftRegistry";
 import Gallery from "@/components/Gallery";
 import FAQ from "@/components/FAQ";
 import RSVP from "@/components/RSVP";
-import Playlist from "@/components/Playlist";
 import Footer from "@/components/Footer";
 import AppWrapper from "@/components/AppWrapper";
 
@@ -38,7 +37,6 @@ export default function Home() {
         <Gallery />
         <FAQ />
         <RSVP />
-        <Playlist />
         <Footer />
       </main>
     </AppWrapper>
