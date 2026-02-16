@@ -8,28 +8,28 @@ import { AnimatePresence } from "framer-motion";
 
 const photos = [
   {
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
-    alt: "Pareja en la playa",
+    src: "/images/gallery-1.jpg",
+    alt: "María José y Pablo José",
   },
   {
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80",
-    alt: "Momento romántico",
+    src: "/images/gallery-2.jpg",
+    alt: "María José y Pablo José",
   },
   {
-    src: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80",
-    alt: "Detalles de boda",
+    src: "/images/gallery-3.jpg",
+    alt: "María José y Pablo José",
   },
   {
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
-    alt: "Celebración",
+    src: "/images/gallery-4.jpg",
+    alt: "María José y Pablo José",
   },
   {
-    src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80",
-    alt: "Atardecer juntos",
+    src: "/images/gallery-5.jpg",
+    alt: "María José y Pablo José",
   },
   {
-    src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80",
-    alt: "Momentos especiales",
+    src: "/images/gallery-6.jpg",
+    alt: "María José y Pablo José",
   },
 ];
 
