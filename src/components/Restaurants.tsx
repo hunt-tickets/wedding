@@ -11,21 +11,21 @@ const restaurants = [
     description:
       "Cocina contemporánea con ingredientes locales en un ambiente sofisticado y acogedor.",
     image: "/images/restaurant-guasimo.jpg",
-    url: "#",
+    url: "https://www.facebook.com/people/Guasimo-Restaurante/100077570176542/",
   },
   {
     name: "Casa Magdalena",
     description:
       "Restaurante boutique con platos de autor y una selección exquisita de vinos.",
     image: "/images/restaurant-casa-magdalena.jpg",
-    url: "#",
+    url: "https://www.instagram.com/casamagdalena_smr/",
   },
   {
     name: "Grupo Ouzo",
     description:
       "Experiencia gastronómica mediterránea con los mejores sabores del mar Caribe.",
     image: "/images/restaurant-ouzo.jpg",
-    url: "#",
+    url: "https://www.instagram.com/ouzo.santamarta/",
   },
 ];
 
