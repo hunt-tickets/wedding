@@ -212,7 +212,6 @@ export default function Location() {
                 className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"
               />
             </div>
-            <div className="hidden md:block absolute -top-4 -right-4 w-full h-full border-2 border-gold rounded-2xl -z-10" />
           </motion.div>
         </div>
 
@@ -237,7 +236,6 @@ export default function Location() {
                 className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"
               />
             </div>
-            <div className="hidden md:block absolute -top-4 -left-4 w-full h-full border-2 border-gold rounded-2xl -z-10" />
           </motion.div>
 
           {/* Venue Info */}
