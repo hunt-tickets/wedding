@@ -5,17 +5,17 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { ChevronDown } from "lucide-react";
 import Countdown from "./Countdown";
 
-// Mobile images (vertical/portrait)
+// Mobile images (vertical/portrait) - photo4 and photo5
 const mobileImages = [
-  "/images/hero-vertical-1.jpg",
-  "/images/hero-vertical-2.jpg",
+  "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/main/photo4.jpg",
+  "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/main/photo5.jpg",
 ];
 
-// Desktop images (horizontal/landscape)
+// Desktop images (horizontal/landscape) - photo1, photo2, photo3
 const desktopImages = [
-  "/images/hero-horizontal-1.jpg",
-  "/images/hero-horizontal-2.jpg",
-  "/images/hero-horizontal-3.jpg",
+  "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/main/photo1.jpg",
+  "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/main/photo2.jpg",
+  "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/main/photo3.jpg",
 ];
 
 export default function Hero() {
