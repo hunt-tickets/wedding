@@ -6,32 +6,11 @@ import { useRef, useState } from "react";
 import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 
-const photos = [
-  {
-    src: "/images/gallery-1.jpg",
-    alt: "María José y Pablo José",
-  },
-  {
-    src: "/images/gallery-2.jpg",
-    alt: "María José y Pablo José",
-  },
-  {
-    src: "/images/gallery-3.jpg",
-    alt: "María José y Pablo José",
-  },
-  {
-    src: "/images/gallery-4.jpg",
-    alt: "María José y Pablo José",
-  },
-  {
-    src: "/images/gallery-5.jpg",
-    alt: "María José y Pablo José",
-  },
-  {
-    src: "/images/gallery-6.jpg",
-    alt: "María José y Pablo José",
-  },
-];
+// Generate array of 43 photos from Supabase Storage
+const photos = Array.from({ length: 43 }, (_, i) => ({
+  src: `https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/gallery/photo${i + 1}.jpg`,
+  alt: "María José y Pablo José",
+}));
 
 export default function Gallery() {
   const ref = useRef(null);
