@@ -18,9 +18,14 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
+
+  // Number of photos to show initially
+  const initialPhotoCount = 12;
+  const displayedPhotos = showAll ? photos : photos.slice(0, initialPhotoCount);
 
   const openLightbox = (index: number) => setSelectedImage(index);
   const closeLightbox = () => setSelectedImage(null);
@@ -77,7 +82,7 @@ export default function Gallery() {
 
         {/* Photo Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
-          {photos.map((photo, index) => (
+          {displayedPhotos.map((photo, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -97,6 +102,24 @@ export default function Gallery() {
             </motion.div>
           ))}
         </div>
+
+        {/* Ver más fotos button */}
+        {!showAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-center mt-8 sm:mt-12"
+          >
+            <button
+              onClick={() => setShowAll(true)}
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-navy text-white rounded-full font-light text-sm sm:text-base hover:bg-navy/90 transition-colors"
+            >
+              <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
+              Ver más fotos ({photos.length - initialPhotoCount} más)
+            </button>
+          </motion.div>
+        )}
       </div>
 
       {/* Lightbox */}
