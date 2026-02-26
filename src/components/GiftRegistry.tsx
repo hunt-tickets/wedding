@@ -65,7 +65,7 @@ function GiftCard({
       <p className="text-navy/60 text-sm sm:text-base mb-4 sm:mb-6">{option.description}</p>
 
       {option.bankInfo && (
-        <div className="bg-cream rounded-xl p-4 mb-6 text-left">
+        <div className="bg-cream rounded-xl p-4 text-left">
           <p className="text-sm text-navy/80">
             <strong>Banco:</strong> {option.bankInfo.bank}
           </p>
@@ -80,14 +80,6 @@ function GiftCard({
           </p>
         </div>
       )}
-
-      <a
-        href={option.link}
-        className="inline-flex items-center gap-2 text-gold hover:text-navy transition-colors font-medium"
-      >
-        {option.linkText}
-        <span className="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
     </motion.div>
   );
 }
