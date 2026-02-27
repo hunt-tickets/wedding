@@ -38,7 +38,7 @@ export default function Weather() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="bg-cream rounded-2xl p-6 text-center"
           >
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gold/20 rounded-none flex items-center justify-center mx-auto mb-4">
               <Sun className="w-7 h-7 sm:w-8 sm:h-8 text-gold" />
             </div>
             <h3 className="font-serif text-xl sm:text-2xl text-navy mb-2">Temperatura</h3>
@@ -51,7 +51,7 @@ export default function Weather() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-cream rounded-2xl p-6 text-center"
           >
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-navy/10 rounded-none flex items-center justify-center mx-auto mb-4">
               <Droplets className="w-7 h-7 sm:w-8 sm:h-8 text-navy" />
             </div>
             <h3 className="font-serif text-xl sm:text-2xl text-navy mb-2">Humedad</h3>
@@ -64,7 +64,7 @@ export default function Weather() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="bg-cream rounded-2xl p-6 text-center"
           >
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-navy/10 rounded-none flex items-center justify-center mx-auto mb-4">
               <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-navy" />
             </div>
             <h3 className="font-serif text-xl sm:text-2xl text-navy mb-2">Vientos</h3>
@@ -77,7 +77,7 @@ export default function Weather() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="bg-cream rounded-2xl p-6 text-center"
           >
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-navy/10 rounded-none flex items-center justify-center mx-auto mb-4">
               <CloudRain className="w-7 h-7 sm:w-8 sm:h-8 text-navy" />
             </div>
             <h3 className="font-serif text-xl sm:text-2xl text-navy mb-2">Lluvias</h3>

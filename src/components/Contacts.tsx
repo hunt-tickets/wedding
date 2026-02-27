@@ -110,7 +110,7 @@ export default function Contacts() {
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-navy rounded-none flex items-center justify-center">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-serif text-2xl text-navy">
@@ -137,7 +137,7 @@ export default function Contacts() {
                           rel="noopener noreferrer"
                           className="flex items-center gap-2 text-sm text-navy/70 hover:text-gold transition-colors group"
                         >
-                          <div className="w-8 h-8 bg-green-500/10 rounded-full flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                          <div className="w-8 h-8 bg-green-500/10 rounded-none flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
                             <Phone className="w-4 h-4 text-green-600" />
                           </div>
                           <span>{provider.whatsapp}</span>
@@ -151,7 +151,7 @@ export default function Contacts() {
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-sm text-navy/70 hover:text-gold transition-colors group"
                           >
-                            <div className="w-8 h-8 bg-pink-500/10 rounded-full flex items-center justify-center group-hover:bg-pink-500/20 transition-colors">
+                            <div className="w-8 h-8 bg-pink-500/10 rounded-none flex items-center justify-center group-hover:bg-pink-500/20 transition-colors">
                               <Instagram className="w-4 h-4 text-pink-600" />
                             </div>
                             <span>{provider.instagram}</span>

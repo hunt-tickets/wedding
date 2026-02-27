@@ -109,7 +109,7 @@ export default function Gallery() {
           >
             <button
               onClick={() => setShowAll(true)}
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-navy text-white rounded-full font-light text-sm sm:text-base hover:bg-navy/90 transition-colors"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-navy text-white rounded-none font-light text-sm sm:text-base hover:bg-navy/90 transition-colors"
             >
               <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
               Ver más fotos ({photos.length - initialPhotoCount} más)
@@ -153,7 +153,7 @@ export default function Gallery() {
               exit={{ opacity: 0, scale: 0.9 }}
               src={photos[selectedImage].src}
               alt={photos[selectedImage].alt}
-              className="max-w-full max-h-[80vh] sm:max-w-[90vw] sm:max-h-[90vh] object-contain rounded-lg"
+              className="max-w-full max-h-[80vh] sm:max-w-[90vw] sm:max-h-[90vh] object-contain rounded-none"
               onClick={(e) => e.stopPropagation()}
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}

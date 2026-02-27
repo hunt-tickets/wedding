@@ -99,7 +99,7 @@ export default function RSVP() {
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-10 text-center border border-white/20"
           >
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold rounded-none flex items-center justify-center mx-auto mb-4 sm:mb-6">
               <Check className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl mb-3 sm:mb-4">¡Gracias por confirmar!</h3>
@@ -123,7 +123,7 @@ export default function RSVP() {
               <input
                 type="text"
                 {...register("name")}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-gold transition-colors text-white placeholder-white/40"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-gold transition-colors text-white placeholder-white/40"
                 placeholder="Tu nombre"
               />
               {errors.name && (
@@ -139,7 +139,7 @@ export default function RSVP() {
               <input
                 type="email"
                 {...register("email")}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-gold transition-colors text-white placeholder-white/40"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-gold transition-colors text-white placeholder-white/40"
                 placeholder="tu@email.com"
               />
               {errors.email && (
@@ -160,7 +160,7 @@ export default function RSVP() {
                     value="yes"
                     className="sr-only peer"
                   />
-                  <div className="py-2.5 sm:py-3 px-3 sm:px-4 border border-white/20 rounded-lg text-center cursor-pointer peer-checked:bg-gold peer-checked:border-gold transition-all hover:border-white/40 text-sm sm:text-base">
+                  <div className="py-2.5 sm:py-3 px-3 sm:px-4 border border-white/20 rounded-none text-center cursor-pointer peer-checked:bg-gold peer-checked:border-gold transition-all hover:border-white/40 text-sm sm:text-base">
                     ¡Sí, asistiré!
                   </div>
                 </label>
@@ -171,7 +171,7 @@ export default function RSVP() {
                     value="no"
                     className="sr-only peer"
                   />
-                  <div className="py-2.5 sm:py-3 px-3 sm:px-4 border border-white/20 rounded-lg text-center cursor-pointer peer-checked:bg-white/20 peer-checked:border-white/40 transition-all hover:border-white/40 text-sm sm:text-base">
+                  <div className="py-2.5 sm:py-3 px-3 sm:px-4 border border-white/20 rounded-none text-center cursor-pointer peer-checked:bg-white/20 peer-checked:border-white/40 transition-all hover:border-white/40 text-sm sm:text-base">
                     No podré asistir
                   </div>
                 </label>
@@ -193,7 +193,7 @@ export default function RSVP() {
                   </label>
                   <select
                     {...register("guests")}
-                    className="w-full px-4 py-3 pr-10 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-gold transition-colors text-white appearance-none cursor-pointer"
+                    className="w-full px-4 py-3 pr-10 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-gold transition-colors text-white appearance-none cursor-pointer"
                   >
                     <option value="" className="text-navy">
                       Selecciona
@@ -241,7 +241,7 @@ export default function RSVP() {
                   <input
                     type="text"
                     {...register("dietary")}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-gold transition-colors text-white placeholder-white/40"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-gold transition-colors text-white placeholder-white/40"
                     placeholder="Vegetariano, vegano, alergias, etc."
                   />
                 </div>
@@ -256,7 +256,7 @@ export default function RSVP() {
               <textarea
                 {...register("message")}
                 rows={4}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-gold transition-colors text-white placeholder-white/40 resize-none"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-gold transition-colors text-white placeholder-white/40 resize-none"
                 placeholder="¡Déjanos un mensaje especial!"
               />
             </div>
@@ -265,7 +265,7 @@ export default function RSVP() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gold text-white py-4 rounded-lg font-medium hover:bg-gold-light transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+              className="w-full bg-gold text-white py-4 rounded-none font-medium hover:bg-gold-light transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {isSubmitting ? (
                 <>

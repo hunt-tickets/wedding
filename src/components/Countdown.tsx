@@ -58,7 +58,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
     <div className="mt-8 sm:mt-12 flex justify-center gap-2 sm:gap-4 md:gap-8">
       {timeUnits.map((unit, index) => (
         <div key={index} className="text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-5 min-w-[60px] sm:min-w-[70px] md:min-w-[90px] border border-white/20">
+          <div className="bg-white/10 backdrop-blur-sm rounded-none p-2 sm:p-3 md:p-5 min-w-[60px] sm:min-w-[70px] md:min-w-[90px] border border-white/20">
             <span className="font-serif text-2xl sm:text-3xl md:text-5xl font-light text-white">
               {unit.value.toString().padStart(2, "0")}
             </span>
