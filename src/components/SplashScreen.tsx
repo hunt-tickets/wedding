@@ -123,7 +123,7 @@ export default function SplashScreen({
               transition={{ duration: 0.4, delay: 1.2 }}
               className="mt-10 w-32 mx-auto"
             >
-              <div className="h-px bg-white/10 overflow-hidden rounded-none">
+              <div className="h-px bg-white/10 overflow-hidden rounded-full">
                 <motion.div
                   initial={{ x: "-100%" }}
                   animate={{ x: "100%" }}

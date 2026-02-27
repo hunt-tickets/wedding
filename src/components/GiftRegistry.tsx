@@ -57,7 +57,7 @@ function GiftCard({
       transition={{ duration: 0.6, delay: index * 0.15 }}
       className="bg-white rounded-2xl p-5 sm:p-8 shadow-lg hover:shadow-xl transition-all group text-center"
     >
-      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-cream rounded-none flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-gold/20 transition-colors">
+      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-gold/20 transition-colors">
         <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-navy group-hover:text-gold transition-colors" />
       </div>
 

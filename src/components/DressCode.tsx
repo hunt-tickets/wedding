@@ -13,8 +13,8 @@ export default function DressCode() {
     <section className="py-24 md:py-32 bg-navy text-white relative overflow-hidden">
       {/* Decorative elements - hidden on mobile */}
       <div className="absolute inset-0 opacity-10 hidden md:block">
-        <div className="absolute top-10 left-10 w-64 h-64 border border-white rounded-none" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 border border-white rounded-none" />
+        <div className="absolute top-10 left-10 w-64 h-64 border border-white rounded-full" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 border border-white rounded-full" />
       </div>
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
@@ -46,7 +46,7 @@ export default function DressCode() {
             <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-10">
               {/* Men */}
               <div className="text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold/20 rounded-none flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <svg
                     className="w-8 h-8 sm:w-10 sm:h-10 text-gold"
                     fill="none"
@@ -69,7 +69,7 @@ export default function DressCode() {
 
               {/* Women */}
               <div className="text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold/20 rounded-none flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <svg
                     className="w-8 h-8 sm:w-10 sm:h-10 text-gold"
                     fill="none"

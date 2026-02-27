@@ -74,7 +74,7 @@ export default function Location() {
                   }`}
                 >
                   {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-gold rounded-none transform md:-translate-x-1/2 z-10" />
+                  <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-gold rounded-full transform md:-translate-x-1/2 z-10" />
 
                   {/* Content */}
                   <div
@@ -92,7 +92,7 @@ export default function Location() {
                           isEven ? "md:flex-row-reverse" : ""
                         }`}
                       >
-                        <div className="w-12 h-12 bg-navy rounded-none flex items-center justify-center">
+                        <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center">
                           <Icon className="w-6 h-6 text-white" />
                         </div>
                         <span className="text-gold font-serif text-2xl">
@@ -138,7 +138,7 @@ export default function Location() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-navy rounded-none flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -152,7 +152,7 @@ export default function Location() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-navy rounded-none flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
                   <Clock className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -162,7 +162,7 @@ export default function Location() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-navy rounded-none flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -243,7 +243,7 @@ export default function Location() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-navy rounded-none flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -257,7 +257,7 @@ export default function Location() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-navy rounded-none flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
                   <Clock className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -267,7 +267,7 @@ export default function Location() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-navy rounded-none flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>

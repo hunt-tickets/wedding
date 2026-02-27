@@ -131,14 +131,14 @@ export default function Hero() {
           animate={{ opacity: 0.1 }}
           transition={{ duration: 2 }}
           style={{ y: circle1Y }}
-          className="absolute top-20 left-10 w-64 h-64 border border-white/30 rounded-none"
+          className="absolute top-20 left-10 w-64 h-64 border border-white/30 rounded-full"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
           transition={{ duration: 2, delay: 0.5 }}
           style={{ y: circle2Y }}
-          className="absolute bottom-20 right-10 w-96 h-96 border border-white/20 rounded-none"
+          className="absolute bottom-20 right-10 w-96 h-96 border border-white/20 rounded-full"
         />
       </div>
 

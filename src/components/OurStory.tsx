@@ -129,7 +129,7 @@ export default function OurStory() {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
-                  className="inline-block bg-gold text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-none mb-3 sm:mb-4 self-start"
+                  className="inline-block bg-gold text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4 self-start"
                 >
                   {event.year}
                 </motion.span>
