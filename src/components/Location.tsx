@@ -190,17 +190,18 @@ export default function Location() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative mt-8 md:mt-0"
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden shadow-xl relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1748!2d-74.2148!3d11.2467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f5f5f5f5f5f5%3A0x5f5f5f5f5f5f5f5f!2sCatedral%20Basílica%20de%20Santa%20Marta!5e0!3m2!1sen!2sco!4v1609459200000!5m2!1sen!2sco"
+                src="https://www.google.com/maps?q=Catedral+Basílica+de+Santa+Marta,+Plaza+de+la+catedral,+Cra+4,+Santa+Marta,+Colombia&output=embed&z=17"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
-                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"
               />
+              {/* Overlay to hide bottom UI elements */}
+              <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
             </div>
           </motion.div>
         </div>
@@ -214,17 +215,18 @@ export default function Location() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="relative order-2 md:order-1 mt-8 md:mt-0"
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden shadow-xl relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.2!2d-74.2135!3d11.2425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f5e5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sClub%20Santa%20Marta!5e0!3m2!1sen!2sco!4v1609459200000!5m2!1sen!2sco"
+                src="https://www.google.com/maps?q=Club+Santa+Marta,+Cra+1C+22-110,+Santa+Marta,+Colombia&output=embed&z=17"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
-                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"
               />
+              {/* Overlay to hide bottom UI elements */}
+              <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
             </div>
           </motion.div>
 

@@ -43,3 +43,20 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-gold);
   color: white;
 }
+
+/* Hide Google Maps UI controls */
+.gm-style-cc,
+.gm-style a[href^="https://maps.google.com/maps"],
+.gm-style a[href^="http://maps.google.com/maps"],
+.gm-style-mtc,
+.gmnoprint,
+.gm-bundled-control,
+.gm-svpc,
+div[title="Keyboard shortcuts"],
+button[aria-label="Keyboard shortcuts"],
+div[role="region"][aria-label="Map"],
+.gm-style-cc + div {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
