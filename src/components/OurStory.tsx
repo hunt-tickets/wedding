@@ -11,42 +11,42 @@ const storyEvents = [
     title: "Nos Conocimos",
     description:
       "Fue una noche de verano cuando nuestros caminos se cruzaron por primera vez. En el lugar menos esperado, solo bastó una mirada, una sonrisa y supimos que algo especial estaba por comenzar.",
-    image: "/images/story-conocimos.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/history/story-conocimos.jpg",
   },
   {
     year: "04.08.2023",
     title: "Primera Cita",
     description:
       "Nerviosos pero emocionados, rápidamente acordamos vernos en Emilia Grace. Las horas pasaron volando mientras descubríamos que no había vuelta atrás.",
-    image: "/images/story-primera-cita.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/history/story-primera-cita.jpg",
   },
   {
     year: "06.10.2023",
     title: "Relación a Distancia",
     description:
       "Después de conocer una de las ciudades más románticas y especiales de Colombia, y de aceptar que la conexión que sentíamos no tenía comparación, decidimos intentar tener una relación a distancia.",
-    image: "/images/story-distancia.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/history/story-distancia.jpg",
   },
   {
     year: "2024",
     title: "Citas Alrededor del Mundo",
     description:
       "Tuvimos citas alrededor del mundo, primero en Paris, luego en Fontaineblue, después en Philadelphia, y finalizando en Singapur…",
-    image: "/images/story-viajes-mundo.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/history/story-viajes-mundo.jpg",
   },
   {
     year: "14.03.2025",
     title: "Nuestro Hogar en Madrid",
     description:
       "Después de varios meses a distancia, y de que nos llegara la noticia de que habías conseguido el puesto soñado en Madrid, decidimos dar el siguiente paso y aventurarnos y construir un hogar juntos. Cada día fue una nueva aventura compartida.",
-    image: "/images/story-hogar-madrid.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/history/story-hogar-madrid.jpg",
   },
   {
     year: "09.08.2025",
     title: "La Propuesta",
     description:
       "Cerca del fin del mundo, muy enamorados, llegó la pregunta más importante.. y la respuesta, después de unos llantos, fue un rotundo si!!!",
-    image: "/images/story-propuesta.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/history/story-propuesta.jpg",
   },
 ];
 
