@@ -83,9 +83,7 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Parallax transforms - background moves slower than scroll
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  // Content parallax transforms only (background stays fixed)
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
@@ -99,20 +97,18 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background with parallax effect and image rotation */}
+      {/* Background fixed (no parallax) with image rotation */}
       <div className="absolute inset-0">
         <AnimatePresence>
           <motion.div
             key={currentImageIndex}
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
             exit={{ opacity: 0, filter: "blur(10px)" }}
             transition={{ duration: 1.8 }}
             style={{
               backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.2), rgba(30, 58, 95, 0.3)), url('${heroImages[currentImageIndex]}')`,
-              y: backgroundY,
-              scale: backgroundScale,
             }}
           />
         </AnimatePresence>
