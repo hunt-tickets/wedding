@@ -73,7 +73,7 @@ export default function Gallery() {
         />
 
         {/* Photo Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
           {displayedPhotos.map((photo, index) => (
             <motion.div
               key={index}
