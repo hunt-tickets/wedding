@@ -54,7 +54,7 @@ export default function Location() {
         />
 
         {/* Cronograma Timeline */}
-        <div className="relative mb-16 sm:mb-24">
+        <div ref={ref} className="relative mb-16 sm:mb-24">
           {/* Vertical line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gold/30 transform md:-translate-x-1/2" />
 
