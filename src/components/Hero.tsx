@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 import Countdown from "./Countdown";
 
 // Mobile images (vertical/portrait) - photo4 and photo5
@@ -99,18 +100,27 @@ export default function Hero() {
     >
       {/* Background fixed (no parallax) with image rotation */}
       <div className="absolute inset-0">
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           <motion.div
             key={currentImageIndex}
-            className="absolute inset-0 bg-cover bg-center bg-fixed"
-            initial={{ opacity: 0, filter: "blur(10px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, filter: "blur(10px)" }}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 1.8 }}
-            style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.2), rgba(30, 58, 95, 0.3)), url('${heroImages[currentImageIndex]}')`,
-            }}
-          />
+          >
+            <Image
+              src={heroImages[currentImageIndex]}
+              alt="María José & Pablo José"
+              fill
+              priority
+              quality={95}
+              sizes="100vw"
+              className="object-cover"
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-navy/20 to-navy/30" />
+          </motion.div>
         </AnimatePresence>
       </div>
 
