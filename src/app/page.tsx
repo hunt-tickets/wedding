@@ -1,19 +1,22 @@
+import dynamic from "next/dynamic";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import OurStory from "@/components/OurStory";
-import PreWedding from "@/components/PreWedding";
-import Location from "@/components/Location";
-import Accommodation from "@/components/Accommodation";
-import Weather from "@/components/Weather";
-import Restaurants from "@/components/Restaurants";
-import Contacts from "@/components/Contacts";
-import DressCode from "@/components/DressCode";
-import GiftRegistry from "@/components/GiftRegistry";
-import Gallery from "@/components/Gallery";
-import FAQ from "@/components/FAQ";
-import RSVP from "@/components/RSVP";
-import Footer from "@/components/Footer";
 import AppWrapper from "@/components/AppWrapper";
+
+// Lazy load non-critical components
+const PreWedding = dynamic(() => import("@/components/PreWedding"));
+const Location = dynamic(() => import("@/components/Location"));
+const Accommodation = dynamic(() => import("@/components/Accommodation"));
+const Weather = dynamic(() => import("@/components/Weather"));
+const Restaurants = dynamic(() => import("@/components/Restaurants"));
+const Contacts = dynamic(() => import("@/components/Contacts"));
+const DressCode = dynamic(() => import("@/components/DressCode"));
+const GiftRegistry = dynamic(() => import("@/components/GiftRegistry"));
+const Gallery = dynamic(() => import("@/components/Gallery"));
+const FAQ = dynamic(() => import("@/components/FAQ"));
+const RSVP = dynamic(() => import("@/components/RSVP"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 // Force dynamic rendering and disable all caching
 export const dynamic = 'force-dynamic';

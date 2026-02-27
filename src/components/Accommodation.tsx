@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { Hotel, Star, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 const hotels = [
   {
@@ -11,7 +12,7 @@ const hotels = [
     stars: 4,
     description:
       "Moderno hotel con diseño contemporáneo, ubicado cerca del centro histórico.",
-    image: "/images/hotel-ac-marriott.avif",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/hotels/marriot_ac.png",
     url: "https://www.marriott.com/en-us/hotels/smrsm-ac-hotel-santa-marta/",
   },
   {
@@ -19,7 +20,7 @@ const hotels = [
     stars: 4,
     description:
       "Hotel de primera clase con excelentes servicios y comodidades para tu estadía.",
-    image: "/images/hotel-hilton.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/hotels/hilton.jpg",
     url: "https://www.hilton.com/en/hotels/smrgigi-hilton-garden-inn-santa-marta/",
   },
   {
@@ -27,7 +28,7 @@ const hotels = [
     stars: 5,
     description:
       "Lujoso hotel boutique en el corazón del centro histórico con vistas al mar Caribe.",
-    image: "/images/hotel-don-pepe.webp",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/hotels/don_pepe.jpg",
     url: "https://hotelboutiquedonpepe.com/?lang=en",
   },
   {
@@ -35,7 +36,7 @@ const hotels = [
     stars: 5,
     description:
       "Resort exclusivo frente al mar con todas las comodidades para una estadía inolvidable.",
-    image: "/images/hotel-marriott-playa.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/hotels/marriott_playadormida.jpg",
     url: "https://www.marriott.com/en-us/hotels/smrmc-santa-marta-marriott-resort-playa-dormida/",
   },
   {
@@ -43,7 +44,7 @@ const hotels = [
     stars: 4,
     description:
       "Hotel con encanto francés y excelente ubicación cerca de la zona turística.",
-    image: "/images/hotel-mercure.avif",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/hotels/mercure.png",
     url: "https://all.accor.com/hotel/9556/index.en.shtml",
   },
   {
@@ -51,7 +52,7 @@ const hotels = [
     stars: 5,
     description:
       "Resort todo incluido en Pozos Colorados con amplias instalaciones y playa privada.",
-    image: "/images/hotel-irotama.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/hotels/irotama.jpg",
     url: "https://www.irotama.com/",
   },
   {
@@ -59,12 +60,12 @@ const hotels = [
     stars: 3,
     description:
       "Opción encantadora y acogedora con excelente relación calidad-precio.",
-    image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/489305916.jpg",
+    image: "https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/hotels/pombal.jpg",
     url: "https://www.expedia.com/Santa-Marta-Hotels-HOTEL-LIBRERIA-CAFE-DE-POMBAL.h124486481.Hotel-Information",
   },
 ];
 
-function HotelCard({
+const HotelCard = memo(function HotelCard({
   hotel,
   index,
 }: {
@@ -83,10 +84,14 @@ function HotelCard({
       className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
     >
       <div className="relative h-44 sm:h-56 overflow-hidden">
-        <img
+        <Image
           src={hotel.image}
           alt={hotel.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2Y1ZjVmNSIvPjwvc3ZnPg=="
         />
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
           <div className="flex items-center gap-1">
@@ -115,7 +120,7 @@ function HotelCard({
       </div>
     </motion.div>
   );
-}
+});
 
 export default function Accommodation() {
   const ref = useRef(null);

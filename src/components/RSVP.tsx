@@ -40,11 +40,29 @@ export default function RSVP() {
 
   const onSubmit = async (data: RSVPFormData) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Form submitted:", data);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    try {
+      const response = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Error al enviar la confirmación');
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting RSVP:', error);
+      alert('Hubo un error al enviar tu confirmación. Por favor intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -169,13 +187,13 @@ export default function RSVP() {
             {attendance === "yes" && (
               <>
                 {/* Number of guests */}
-                <div className="mb-6">
+                <div className="mb-6 relative">
                   <label className="block text-sm font-medium mb-2">
                     Número de invitados *
                   </label>
                   <select
                     {...register("guests")}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-gold transition-colors text-white"
+                    className="w-full px-4 py-3 pr-10 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-gold transition-colors text-white appearance-none cursor-pointer"
                   >
                     <option value="" className="text-navy">
                       Selecciona
@@ -193,6 +211,21 @@ export default function RSVP() {
                       4 personas
                     </option>
                   </select>
+                  <div className="absolute right-4 top-[42px] pointer-events-none">
+                    <svg
+                      className="w-4 h-4 text-white/60"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
                   {errors.guests && (
                     <p className="mt-1 text-sm text-red-400">
                       {errors.guests.message}

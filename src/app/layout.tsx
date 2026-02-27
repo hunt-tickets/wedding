@@ -34,6 +34,19 @@ export default function RootLayout({
         <meta httpEquiv="Cache-Control" content="no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0" />
         <meta httpEquiv="Pragma" content="no-cache" />
         <meta httpEquiv="Expires" content="0" />
+        {/* Preload critical hero images for better LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/main/photo1.jpg"
+          media="(min-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="https://eeyjhkhrdoouapuilwep.supabase.co/storage/v1/object/public/wedding/main/photo4.jpg"
+          media="(max-width: 767px)"
+        />
       </head>
       <body className="antialiased">
         {children}
