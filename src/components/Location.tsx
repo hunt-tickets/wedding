@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Clock, Phone, Church, Wine, UtensilsCrossed, Music, Navigation } from "lucide-react";
+import { MapPin, Clock, Phone, Church, Wine, UtensilsCrossed, Music } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 
 const scheduleItems = [
@@ -171,16 +171,6 @@ export default function Location() {
                 </div>
               </div>
             </div>
-
-            <a
-              href="https://maps.google.com/?q=Catedral+Basílica+Santa+Marta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-navy-light transition-colors w-full sm:w-auto"
-            >
-              <Navigation className="w-5 h-5" />
-              Cómo llegar
-            </a>
           </motion.div>
 
           {/* Map */}
@@ -286,16 +276,6 @@ export default function Location() {
                 </div>
               </div>
             </div>
-
-            <a
-              href="https://maps.google.com/?q=Club+Santa+Marta+Colombia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-navy-light transition-colors w-full sm:w-auto"
-            >
-              <Navigation className="w-5 h-5" />
-              Cómo llegar
-            </a>
           </motion.div>
         </div>
       </div>

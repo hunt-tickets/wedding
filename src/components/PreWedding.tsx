@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Navigation as NavIcon, Clock, Shirt } from "lucide-react";
+import { MapPin, Clock, Shirt } from "lucide-react";
 
 export default function PreWedding() {
   const ref = useRef(null);
@@ -56,7 +56,10 @@ export default function PreWedding() {
                 <div>
                   <h4 className="font-medium text-navy">Dirección</h4>
                   <p className="text-navy/60">
-                    BK Burukuka Santa Marta
+                    Burukuka<br />
+                    Carrera 1 Calle 1, Rodadero<br />
+                    Entrada por Edificio Cascadas del Rodadero<br />
+                    Santa Marta, Colombia
                   </p>
                 </div>
               </div>
@@ -85,16 +88,6 @@ export default function PreWedding() {
                 </div>
               </div>
             </div>
-
-            <a
-              href="https://maps.google.com/?q=BK+Burukuka+Santa+Marta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-navy-light transition-colors w-full sm:w-auto"
-            >
-              <NavIcon className="w-5 h-5" />
-              Cómo llegar
-            </a>
           </motion.div>
 
           {/* Map */}
@@ -104,17 +97,18 @@ export default function PreWedding() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative mt-8 md:mt-0"
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden shadow-xl relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125036.54556506!2d-74.2598!3d11.2404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4b8a5e5c5a9a7%3A0x8c2b0e6c3e6a8c5a!2sSanta%20Marta%2C%20Magdalena!5e0!3m2!1sen!2sco!4v1609459200000!5m2!1sen!2sco"
+                src="https://www.google.com/maps?q=Burukuka+Carrera+1+Calle+1+Rodadero+Santa+Marta+Colombia&output=embed&z=17"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
-                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"
               />
+              {/* Overlay to hide bottom UI elements */}
+              <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
             </div>
             {/* Decorative frame - hidden on mobile */}
             <div className="hidden md:block absolute -top-4 -right-4 w-full h-full border-2 border-gold rounded-2xl -z-10" />
