@@ -44,6 +44,20 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
+/* Lucide icons with square corners instead of rounded */
+svg,
+svg *,
+svg path,
+svg line,
+svg polyline,
+svg rect,
+svg circle,
+svg ellipse,
+svg polygon {
+  stroke-linecap: square !important;
+  stroke-linejoin: miter !important;
+}
+
 /* Hide Google Maps UI controls */
 .gm-style-cc,
 .gm-style a[href^="https://maps.google.com/maps"],

@@ -185,7 +185,7 @@ export default function Location() {
                 src="https://www.google.com/maps?q=Catedral+Basílica+de+Santa+Marta,+Plaza+de+la+catedral,+Cra+4,+Santa+Marta,+Colombia&output=embed&z=17"
                 width="100%"
                 height="300"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"
@@ -210,7 +210,7 @@ export default function Location() {
                 src="https://www.google.com/maps?q=Club+Santa+Marta,+Cra+1C+22-110,+Santa+Marta,+Colombia&output=embed&z=17"
                 width="100%"
                 height="300"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"

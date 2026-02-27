@@ -102,7 +102,7 @@ export default function PreWedding() {
                 src="https://www.google.com/maps?q=Burukuka+Carrera+1+Calle+1+Rodadero+Santa+Marta+Colombia&output=embed&z=17"
                 width="100%"
                 height="300"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500 md:h-[400px]"
