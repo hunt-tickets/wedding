@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" fill="#1e3a5f"/>
+
+  <!-- Decorative corner elements -->
+  <path d="M4 8 L8 4 M24 4 L28 8 M28 24 L24 28 M8 28 L4 24"
+        stroke="#c9a962"
+        stroke-width="0.5"
+        stroke-linecap="square"/>
+
+  <!-- Initials MJ & PJ -->
+  <text x="16" y="19"
+        font-family="serif"
+        font-size="10"
+        font-weight="300"
+        fill="#c9a962"
+        text-anchor="middle">MJ&amp;PJ</text>
+</svg>

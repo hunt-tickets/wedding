@@ -180,7 +180,12 @@ export default function Location() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative mt-8 md:mt-0"
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl relative">
+            <a
+              href="https://www.google.com/maps?q=Catedral+Basílica+de+Santa+Marta,+Plaza+de+la+catedral,+Cra+4,+Santa+Marta,+Colombia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-2xl overflow-hidden shadow-xl relative hover:shadow-2xl transition-shadow cursor-pointer"
+            >
               <iframe
                 src="https://www.google.com/maps?q=Catedral+Basílica+de+Santa+Marta,+Plaza+de+la+catedral,+Cra+4,+Santa+Marta,+Colombia&output=embed&z=17"
                 width="100%"
@@ -192,7 +197,7 @@ export default function Location() {
               />
               {/* Overlay to hide bottom UI elements */}
               <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
-            </div>
+            </a>
           </motion.div>
         </div>
 
@@ -205,7 +210,12 @@ export default function Location() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="relative order-2 md:order-1 mt-8 md:mt-0"
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl relative">
+            <a
+              href="https://www.google.com/maps?q=Club+Santa+Marta,+Cra+1C+22-110,+Santa+Marta,+Colombia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-2xl overflow-hidden shadow-xl relative hover:shadow-2xl transition-shadow cursor-pointer"
+            >
               <iframe
                 src="https://www.google.com/maps?q=Club+Santa+Marta,+Cra+1C+22-110,+Santa+Marta,+Colombia&output=embed&z=17"
                 width="100%"
@@ -217,7 +227,7 @@ export default function Location() {
               />
               {/* Overlay to hide bottom UI elements */}
               <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
-            </div>
+            </a>
           </motion.div>
 
           {/* Venue Info */}

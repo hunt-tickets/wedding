@@ -97,7 +97,12 @@ export default function PreWedding() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative mt-8 md:mt-0"
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl relative">
+            <a
+              href="https://www.google.com/maps?q=Burukuka+Carrera+1+Calle+1+Rodadero+Santa+Marta+Colombia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-2xl overflow-hidden shadow-xl relative hover:shadow-2xl transition-shadow cursor-pointer"
+            >
               <iframe
                 src="https://www.google.com/maps?q=Burukuka+Carrera+1+Calle+1+Rodadero+Santa+Marta+Colombia&output=embed&z=17"
                 width="100%"
@@ -109,7 +114,7 @@ export default function PreWedding() {
               />
               {/* Overlay to hide bottom UI elements */}
               <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
-            </div>
+            </a>
             {/* Decorative frame - hidden on mobile */}
             <div className="hidden md:block absolute -top-4 -right-4 w-full h-full border-2 border-gold rounded-2xl -z-10" />
           </motion.div>

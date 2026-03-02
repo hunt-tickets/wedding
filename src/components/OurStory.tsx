@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Heart } from "lucide-react";
 
 const storyEvents = [
@@ -53,6 +53,7 @@ const storyEvents = [
 export default function OurStory() {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true });
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -105,22 +106,29 @@ export default function OurStory() {
           viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
-          {storyEvents.map((event, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              className="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/5] cursor-pointer"
-            >
+          {storyEvents.map((event, index) => {
+            const isExpanded = expandedCard === index;
+            return (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                onClick={() => setExpandedCard(isExpanded ? null : index)}
+                className="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/5] cursor-pointer"
+              >
               {/* Background Image */}
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ${
+                  isExpanded ? 'scale-110' : ''
+                } group-hover:scale-110`}
                 style={{
                   backgroundImage: `url('${event.image}')`,
                 }}
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent transition-opacity duration-500 group-hover:from-navy/90 group-hover:via-navy/50" />
+              <div className={`absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent transition-opacity duration-500 group-hover:from-navy/90 group-hover:via-navy/50 ${
+                isExpanded ? 'from-navy/90 via-navy/50' : ''
+              }`} />
 
               {/* Content */}
               <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end text-white">
@@ -135,20 +143,27 @@ export default function OurStory() {
                 </motion.span>
 
                 {/* Title */}
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 transition-transform duration-500 group-hover:translate-y-[-4px]">
+                <h3 className={`font-serif text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 transition-transform duration-500 ${
+                  isExpanded ? 'translate-y-[-4px]' : ''
+                } group-hover:translate-y-[-4px]`}>
                   {event.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-white/80 text-sm sm:text-base leading-relaxed max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-48 group-hover:opacity-100">
+                <p className={`text-white/80 text-sm sm:text-base leading-relaxed overflow-hidden transition-all duration-500 ${
+                  isExpanded ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+                } group-hover:max-h-48 group-hover:opacity-100`}>
                   {event.description}
                 </p>
               </div>
 
               {/* Decorative corner element */}
-              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-gold/30 rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className={`absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-gold/30 rounded-tr-lg transition-opacity duration-500 ${
+                isExpanded ? 'opacity-100' : 'opacity-0'
+              } group-hover:opacity-100`} />
             </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
     </section>
