@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       message,
     });
 
-    const adminEmail = process.env.ADMIN_EMAIL || 'admin@example.com';
+    const adminEmail = process.env.ADMIN_EMAIL || 'mj.lizcano98@gmail.com';
     const fromEmail = process.env.FROM_EMAIL || 'noreply@resend.dev';
 
     // Send email to both guest and admin

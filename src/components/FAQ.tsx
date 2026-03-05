@@ -150,8 +150,8 @@ export default function FAQ() {
           className="text-center text-navy/50 mt-10"
         >
           ¿Tienes otra pregunta? Escríbenos a{" "}
-          <a href="mailto:boda@pablomariajose.com" className="text-gold hover:underline">
-            boda@pablomariajose.com
+          <a href="mailto:mj.lizcano98@gmail.com" className="text-gold hover:underline">
+            mj.lizcano98@gmail.com
           </a>
         </motion.p>
       </div>

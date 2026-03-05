@@ -38,7 +38,7 @@ export default function Footer() {
             <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
           <a
-            href="mailto:boda@pablomariajose.com"
+            href="mailto:mj.lizcano98@gmail.com"
             className="w-10 h-10 sm:w-12 sm:h-12 bg-navy rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors"
           >
             <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
