@@ -51,6 +51,19 @@ export default function PreWedding() {
             <div className="space-y-4">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-navy">Fecha y Hora</h4>
+                  <p className="text-navy/60">
+                    Jueves 30 de julio<br />
+                    4:30 PM - 8:00 PM
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -61,16 +74,6 @@ export default function PreWedding() {
                     Entrada por Edificio Cascadas del Rodadero<br />
                     Santa Marta, Colombia
                   </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-navy">Hora</h4>
-                  <p className="text-navy/60">4:30 PM - 8:00 PM</p>
                 </div>
               </div>
 
