@@ -12,12 +12,17 @@ const contacts = [
     providers: [
       {
         name: "K Makeup",
-        whatsapp: "+57 320 5673902",
+        whatsapp: "+57 3108321935",
         instagram: "@kmakeup_c",
       },
       {
+        name: "Makeup by Wendy",
+        whatsapp: "+57 3205673902",
+        instagram: "@makeupbywendy_",
+      },
+      {
         name: "Andrea Altahona",
-        whatsapp: "+57 300 1499172",
+        whatsapp: "",
         instagram: "@andrealtahonamakeup",
       },
       {
@@ -59,7 +64,7 @@ const contacts = [
     providers: [
       {
         name: "Jherson Kock",
-        whatsapp: "+57 300 8142926",
+        whatsapp: "",
         instagram: "@jhersonkock",
       },
       {
@@ -131,17 +136,19 @@ export default function Contacts() {
 
                       <div className="space-y-2">
                         {/* WhatsApp */}
-                        <a
-                          href={`https://wa.me/${provider.whatsapp.replace(/\s/g, "")}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm text-navy/70 hover:text-gold transition-colors group"
-                        >
-                          <div className="w-8 h-8 bg-green-500/10 rounded-full flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
-                            <Phone className="w-4 h-4 text-green-600" />
-                          </div>
-                          <span>{provider.whatsapp}</span>
-                        </a>
+                        {provider.whatsapp && (
+                          <a
+                            href={`https://wa.me/${provider.whatsapp.replace(/\s/g, "")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-navy/70 hover:text-gold transition-colors group"
+                          >
+                            <div className="w-8 h-8 bg-green-500/10 rounded-full flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                              <Phone className="w-4 h-4 text-green-600" />
+                            </div>
+                            <span>{provider.whatsapp}</span>
+                          </a>
+                        )}
 
                         {/* Instagram */}
                         {provider.instagram && (

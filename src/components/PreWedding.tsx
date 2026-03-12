@@ -101,13 +101,13 @@ export default function PreWedding() {
             className="relative mt-8 md:mt-0"
           >
             <a
-              href="https://www.google.com/maps?q=Burukuka+Carrera+1+Calle+1+Rodadero+Santa+Marta+Colombia"
+              href="https://www.google.com/maps?q=11.207843666084596,-74.23069431090215"
               target="_blank"
               rel="noopener noreferrer"
               className="block rounded-2xl overflow-hidden shadow-xl relative hover:shadow-2xl transition-shadow cursor-pointer"
             >
               <iframe
-                src="https://www.google.com/maps?q=Burukuka+Carrera+1+Calle+1+Rodadero+Santa+Marta+Colombia&output=embed&z=17"
+                src="https://www.google.com/maps?q=11.207843666084596,-74.23069431090215&output=embed&z=18"
                 width="100%"
                 height="300"
                 style={{ border: 0, pointerEvents: 'none' }}

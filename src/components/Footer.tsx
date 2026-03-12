@@ -1,26 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Instagram, Mail } from "lucide-react";
+import { Heart, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-cream py-12 sm:py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        {/* Hashtag */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-8 sm:mb-10"
-        >
-          <p className="text-navy/50 text-sm sm:text-base mb-2">Comparte tus fotos con nuestro hashtag</p>
-          <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-navy break-all sm:break-normal">
-            #MariaJoseYPabloJose
-          </h3>
-        </motion.div>
-
         {/* Social Links */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,14 +15,6 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center gap-4 sm:gap-6 mb-8 sm:mb-10"
         >
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 sm:w-12 sm:h-12 bg-navy rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors"
-          >
-            <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
           <a
             href="mailto:mj.lizcano98@gmail.com"
             className="w-10 h-10 sm:w-12 sm:h-12 bg-navy rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors"
