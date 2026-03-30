@@ -29,12 +29,24 @@ const giftOptions = [
       "Si prefieres, puedes hacer una transferencia directa a nuestra cuenta bancaria.",
     link: "#",
     linkText: "Ver datos bancarios",
-    bankInfo: {
-      bank: "BBVA España",
-      iban: "ES02 0182 4028 7802 0165 5902",
-      swift: "BBVAESMM",
-      name: "Maria Jose Lizcano Gomez",
-    },
+    bankInfo: [
+      {
+        bank: "BBVA España",
+        details: [
+          { label: "IBAN", value: "ES02 0182 4028 7802 0165 5902" },
+          { label: "Código Swift", value: "BBVAESMM" },
+          { label: "Titular", value: "Maria Jose Lizcano Gomez" },
+        ],
+      },
+      {
+        bank: "Bancolombia",
+        details: [
+          { label: "Cuenta", value: "26125852580" },
+          { label: "CC", value: "1061796430" },
+          { label: "Titular", value: "Pablo Jose Arboleda Bolaños" },
+        ],
+      },
+    ],
   },
 ];
 
@@ -65,19 +77,19 @@ function GiftCard({
       <p className="text-navy/60 text-sm sm:text-base mb-4 sm:mb-6">{option.description}</p>
 
       {option.bankInfo && (
-        <div className="bg-cream rounded-xl p-4 text-left">
-          <p className="text-sm text-navy/80">
-            <strong>Banco:</strong> {option.bankInfo.bank}
-          </p>
-          <p className="text-sm text-navy/80">
-            <strong>IBAN:</strong> {option.bankInfo.iban}
-          </p>
-          <p className="text-sm text-navy/80">
-            <strong>Código Swift:</strong> {option.bankInfo.swift}
-          </p>
-          <p className="text-sm text-navy/80">
-            <strong>Titular:</strong> {option.bankInfo.name}
-          </p>
+        <div className="space-y-3">
+          {option.bankInfo.map((bank) => (
+            <div key={bank.bank} className="bg-cream rounded-xl p-4 text-left">
+              <p className="text-sm text-navy/80 font-semibold mb-1">
+                {bank.bank}
+              </p>
+              {bank.details.map((detail) => (
+                <p key={detail.label} className="text-sm text-navy/80">
+                  <strong>{detail.label}:</strong> {detail.value}
+                </p>
+              ))}
+            </div>
+          ))}
         </div>
       )}
     </motion.div>

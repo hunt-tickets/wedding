@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, memo } from "react";
-import { Hotel, Star, ExternalLink } from "lucide-react";
+import { Hotel, Star, ExternalLink, Clock } from "lucide-react";
 import Image from "next/image";
 
 const hotels = [
@@ -155,12 +155,28 @@ export default function Accommodation() {
           ))}
         </div>
 
+        {/* Travel time notice */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-12 bg-cream border border-gold/30 rounded-2xl p-6 sm:p-8 text-center max-w-2xl mx-auto"
+        >
+          <Clock className="w-8 h-8 text-gold mx-auto mb-3" />
+          <p className="font-serif text-lg sm:text-xl text-navy mb-2">
+            Si te hospedas en Pozos Colorados
+          </p>
+          <p className="text-navy/70 text-base sm:text-lg">
+            Calcula aproximadamente <strong className="text-navy">1 hora de camino</strong> hasta la iglesia.
+          </p>
+        </motion.div>
+
         {/* Note */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center text-navy/50 mt-12 text-sm"
+          className="text-center text-navy/50 mt-6 text-sm"
         >
           Opciones cerca de la ceremonia y fiesta, o en Pozos Colorados
         </motion.p>
