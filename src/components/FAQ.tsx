@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "¿Cuál es la fecha límite para confirmar?",
     answer:
-      "Por favor, confirma tu asistencia antes del 1 de julio. Nuestra wedding planner María Paola va a estar llamándote para que confirmes.",
+      "Por favor, confirma tu asistencia antes del 15 de mayo. Nuestra wedding planner María Paola va a estar llamándote para que confirmes.",
   },
   {
     question: "¿Qué pasa si llueve?",

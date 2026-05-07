@@ -87,7 +87,7 @@ export default function RSVP() {
             Confirma tu Asistencia
           </h2>
           <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto">
-            Por favor, confirma antes del 1 de Julio de 2026
+            Por favor, confirma antes del 15 de Mayo de 2026
           </p>
           <div className="w-16 sm:w-24 h-px bg-gold mx-auto mt-6 sm:mt-8" />
         </motion.div>
